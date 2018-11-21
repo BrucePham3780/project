@@ -4,26 +4,41 @@
  * @var \App\Model\Entity\Category $category
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $category->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $category->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Category'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
-<div class="category form large-9 medium-8 columns content">
-    <?= $this->Form->create($category) ?>
-    <fieldset>
-        <legend><?= __('Edit Category') ?></legend>
-        <?php
-            echo $this->Form->control('name');
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <strong>Category</strong>
+        </div>
+        <div class="card-body card-block">
+            <?= $this->Form->create($category, array('class'=>'card-horizontal')) ?>
+            <fieldset>
+                <div class="col-lg-6">
+                <?php
+                echo $this->Form->label('Name');
+                echo $this->Form->control('name', array(
+                    'type'=>'text',
+                    'class'=>'form-control',
+                    'placeholder'=>'Enter name...',
+                    'label'=> false
+
+                ));
+                ?>
+                    
+                </div>
+            </fieldset>
+        </div>
+
+            <div class="card-footer">
+                <?= $this->Form->button("<i class='fa fa-dot-circle-o'></i> Submit", array(
+                    'type' => 'submit',
+                    'class'=>'btn btn-primary btn-sm', 
+                    
+                     'escape' => false )
+                    ) 
+                ?>
+                
+
+                <?= $this->Form->end() ?>            
+            </div>        
+    </div>
 </div>

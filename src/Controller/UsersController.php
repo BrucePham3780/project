@@ -53,16 +53,33 @@ class UsersController extends AppController
     {
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
+
+            if(!empty($this->request->data['images']['name']))
+                {
+                    $filename = $this->request->data['images']['name'];
+                    $uploadpath = 'img/';
+                    $uploadfile =  $uploadpath.$filename;
+                    if(move_uploaded_file($this->request->data['images']['tmp_name'], $uploadfile)){
+                        
+                        $this->request->data['images']= $filename;
+                    }
+                    
+                }else{
+                        $this->Flash->error(__('No file choosen'));
+                    }
+
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success(__('The product has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+            $this->Flash->error(__('The product could not be saved. Please, try again.'));
         }
         $role = $this->Users->Role->find('list', ['limit' => 200]);
+
         $this->set(compact('user', 'role'));
+        $this->set('_serialize',['user']);
     }
 
     /**

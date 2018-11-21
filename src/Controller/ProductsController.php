@@ -51,9 +51,26 @@ class ProductsController extends AppController
      */
     public function add()
     {
+        
         $product = $this->Products->newEntity();
         if ($this->request->is('post')) {
+
+            if(!empty($this->request->data['images']['name']))
+                {
+                    $filename = $this->request->data['images']['name'];
+                    $uploadpath = 'img/';
+                    $uploadfile =  $uploadpath.$filename;
+                    if(move_uploaded_file($this->request->data['images']['tmp_name'], $uploadfile)){
+                        
+                        $this->request->data['images']= $filename;
+                    }
+                    
+                }else{
+                        $this->Flash->error(__('No file choosen'));
+                    }
+
             $product = $this->Products->patchEntity($product, $this->request->getData());
+            // print_r($product); die();
             if ($this->Products->save($product)) {
                 $this->Flash->success(__('The product has been saved.'));
 
@@ -62,7 +79,9 @@ class ProductsController extends AppController
             $this->Flash->error(__('The product could not be saved. Please, try again.'));
         }
         $category = $this->Products->Category->find('list', ['limit' => 200]);
+
         $this->set(compact('product', 'category'));
+        $this->set('_serialize',['product']);
     }
 
     /**
@@ -78,6 +97,19 @@ class ProductsController extends AppController
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
+            if(!empty($this->request->data['images']['name']))
+                {
+                    $filename = $this->request->data['images']['name'];
+                    $uploadpath = 'img/';
+                    $uploadfile =  $uploadpath.$filename;
+                    if(move_uploaded_file($this->request->data['images']['tmp_name'], $uploadfile)){
+                        
+                        $this->request->data['images']= $filename;
+                    }
+                    
+                }else{
+                        $this->Flash->error(__('No file choosen'));
+                    }
             $product = $this->Products->patchEntity($product, $this->request->getData());
             if ($this->Products->save($product)) {
                 $this->Flash->success(__('The product has been saved.'));

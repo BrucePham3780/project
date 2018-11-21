@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Order Model
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
- * @property \App\Model\Table\OrderdetailTable|\Cake\ORM\Association\BelongsTo $Orderdetail
+ * @property \App\Model\Table\OrderdetailTable|\Cake\ORM\Association\HasMany $Orderdetail
  * @property \App\Model\Table\ShippingTable|\Cake\ORM\Association\HasMany $Shipping
  *
  * @method \App\Model\Entity\Order get($primaryKey, $options = [])
@@ -46,8 +46,8 @@ class OrderTable extends Table
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id'
         ]);
-        $this->belongsTo('Orderdetail', [
-            'foreignKey' => 'ordetail_id'
+        $this->hasMany('Orderdetail', [
+            'foreignKey' => 'order_id'
         ]);
         $this->hasMany('Shipping', [
             'foreignKey' => 'order_id'
@@ -88,7 +88,6 @@ class OrderTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
-        $rules->add($rules->existsIn(['ordetail_id'], 'Orderdetail'));
 
         return $rules;
     }

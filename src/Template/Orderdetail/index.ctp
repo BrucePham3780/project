@@ -8,8 +8,8 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Orderdetail'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Products'), ['controller' => 'Products', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Product'), ['controller' => 'Products', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Order'), ['controller' => 'Order', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Order'), ['controller' => 'Order', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="orderdetail index large-9 medium-8 columns content">
@@ -21,6 +21,7 @@
                 <th scope="col"><?= $this->Paginator->sort('proc_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('qty') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('tt_price') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('order_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -28,9 +29,10 @@
             <?php foreach ($orderdetail as $orderdetail): ?>
             <tr>
                 <td><?= $this->Number->format($orderdetail->id) ?></td>
-                <td><?= $orderdetail->has('product') ? $this->Html->link($orderdetail->product->name, ['controller' => 'Products', 'action' => 'view', $orderdetail->product->id]) : '' ?></td>
+                <td><?= $this->Number->format($orderdetail->proc_id) ?></td>
                 <td><?= $this->Number->format($orderdetail->qty) ?></td>
                 <td><?= $this->Number->format($orderdetail->tt_price) ?></td>
+                <td><?= $orderdetail->has('order') ? $this->Html->link($orderdetail->order->id, ['controller' => 'Order', 'action' => 'view', $orderdetail->order->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $orderdetail->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $orderdetail->id]) ?>

@@ -28,7 +28,6 @@
         <legend><?= __('Edit Order') ?></legend>
         <?php
             echo $this->Form->control('user_id', ['options' => $users, 'empty' => true]);
-            echo $this->Form->control('ordetail_id', ['options' => $orderdetail, 'empty' => true]);
             echo $this->Form->control('status');
             echo $this->Form->control('tt_price');
         ?>

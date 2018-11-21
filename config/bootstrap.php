@@ -44,6 +44,7 @@ use Cake\Mailer\Email;
 use Cake\Mailer\TransportFactory;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
+use Cake\I18n\Time;
 
 /**
  * Uncomment block of code below if you want to use `.env` file during development.
@@ -99,11 +100,13 @@ if (Configure::read('debug')) {
  * Set the default server timezone. Using UTC makes time calculations / conversions easier.
  * Check http://php.net/manual/en/timezones.php for list of valid timezone strings.
  */
-date_default_timezone_set(Configure::read('App.defaultTimezone'));
-
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+// date_default_timezone_set('UTC');
 /*
  * Configure the mbstring extension to use the correct encoding.
  */
+
+
 mb_internal_encoding(Configure::read('App.encoding'));
 
 /*

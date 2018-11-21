@@ -8,14 +8,13 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $user_id
- * @property int $ordetail_id
  * @property string $status
  * @property float $tt_price
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
  * @property \App\Model\Entity\User $user
- * @property \App\Model\Entity\Orderdetail $orderdetail
+ * @property \App\Model\Entity\Orderdetail[] $orderdetail
  * @property \App\Model\Entity\Shipping[] $shipping
  */
 class Order extends Entity
@@ -32,7 +31,6 @@ class Order extends Entity
      */
     protected $_accessible = [
         'user_id' => true,
-        'ordetail_id' => true,
         'status' => true,
         'tt_price' => true,
         'created' => true,

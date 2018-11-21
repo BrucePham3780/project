@@ -10,8 +10,10 @@ use Cake\ORM\Entity;
  * @property int $proc_id
  * @property int $qty
  * @property float $tt_price
+ * @property int $order_id
  *
- * @property \App\Model\Entity\Product $product
+ * @property \App\Model\Entity\Proc $proc
+ * @property \App\Model\Entity\Order $order
  */
 class Orderdetail extends Entity
 {
@@ -29,6 +31,8 @@ class Orderdetail extends Entity
         'proc_id' => true,
         'qty' => true,
         'tt_price' => true,
-        'product' => true
+        'order_id' => true,
+        'proc' => true,
+        'order' => true
     ];
 }

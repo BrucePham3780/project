@@ -133,3 +133,243 @@ Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 136
 
 
 
+2018-11-16 10:50:21 Notice: Deprecated (16384): Checking a single plugin with Plugin::loaded() is deprecated. Use Plugin::isLoaded() instead. - C:\xampp\htdocs\project\vendor\wyrihaximus\twig-view\config\bootstrap.php, line: 11
+ You can disable deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED` in your config/app.php. in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Core\functions.php, line 310]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 159
+deprecationWarning - CORE\src\Core\functions.php, line 310
+Cake\Core\Plugin::loaded() - CORE\src\Core\Plugin.php, line 366
+require - ROOT\vendor\wyrihaximus\twig-view\config\bootstrap.php, line 11
+Cake\Core\BasePlugin::bootstrap() - CORE\src\Core\BasePlugin.php, line 239
+Cake\Http\BaseApplication::pluginBootstrap() - CORE\src\Http\BaseApplication.php, line 161
+Cake\Console\CommandRunner::bootstrap() - CORE\src\Console\CommandRunner.php, line 193
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 136
+[main] - ROOT\bin\cake.php, line 12
+
+
+
+2018-11-16 10:50:31 Notice: Deprecated (16384): Checking a single plugin with Plugin::loaded() is deprecated. Use Plugin::isLoaded() instead. - C:\xampp\htdocs\project\vendor\wyrihaximus\twig-view\config\bootstrap.php, line: 11
+ You can disable deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED` in your config/app.php. in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Core\functions.php, line 310]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 159
+deprecationWarning - CORE\src\Core\functions.php, line 310
+Cake\Core\Plugin::loaded() - CORE\src\Core\Plugin.php, line 366
+require - ROOT\vendor\wyrihaximus\twig-view\config\bootstrap.php, line 11
+Cake\Core\BasePlugin::bootstrap() - CORE\src\Core\BasePlugin.php, line 239
+Cake\Http\BaseApplication::pluginBootstrap() - CORE\src\Http\BaseApplication.php, line 161
+Cake\Console\CommandRunner::bootstrap() - CORE\src\Console\CommandRunner.php, line 193
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 136
+[main] - ROOT\bin\cake.php, line 12
+
+
+
+2018-11-16 10:50:31 Notice: Notice (8): Undefined index: Catedetail in [C:\xampp\htdocs\project\vendor\cakephp\bake\src\View\Helper\DocBlockHelper.php, line 238]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 159
+Bake\View\Helper\DocBlockHelper::buildTableAnnotations() - ROOT\vendor\cakephp\bake\src\View\Helper\DocBlockHelper.php, line 238
+Twig_Template::getAttribute() - ROOT\vendor\twig\twig\lib\Twig\Template.php, line 679
+__TwigTemplate_5a9383ff007622de73eb1b2d8c7479db9de972cffa578ba5e2aca90f110ce434::doDisplay() - ROOT\tmp\cache\twigView\54\547c969c952d854490dfc0ef744ec432148c6f8e114abc258b5ae207fbbe3072.php, line 22
+Twig_Template::displayWithErrorHandling() - ROOT\vendor\twig\twig\lib\Twig\Template.php, line 432
+Twig_Template::display() - ROOT\vendor\twig\twig\lib\Twig\Template.php, line 403
+Twig_Template::render() - ROOT\vendor\twig\twig\lib\Twig\Template.php, line 411
+WyriHaximus\TwigView\View\TwigView::_render() - ROOT\vendor\wyrihaximus\twig-view\src\View\TwigView.php, line 180
+Bake\View\BakeView::render() - ROOT\vendor\cakephp\bake\src\View\BakeView.php, line 146
+Bake\Shell\Task\BakeTemplateTask::generate() - ROOT\vendor\cakephp\bake\src\Shell\Task\BakeTemplateTask.php, line 91
+Bake\Shell\Task\ModelTask::bakeTable() - ROOT\vendor\cakephp\bake\src\Shell\Task\ModelTask.php, line 971
+Bake\Shell\Task\ModelTask::bake() - ROOT\vendor\cakephp\bake\src\Shell\Task\ModelTask.php, line 115
+Bake\Shell\Task\ModelTask::main() - ROOT\vendor\cakephp\bake\src\Shell\Task\ModelTask.php, line 101
+Bake\Shell\BakeShell::Bake\Shell\{closure}() - ROOT\vendor\cakephp\bake\src\Shell\BakeShell.php, line 273
+Cake\Collection\Collection::each() - CORE\src\Collection\CollectionTrait.php, line 51
+Bake\Shell\BakeShell::all() - ROOT\vendor\cakephp\bake\src\Shell\BakeShell.php, line 274
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 518
+Cake\Console\CommandRunner::runShell() - CORE\src\Console\CommandRunner.php, line 342
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 164
+[main] - ROOT\bin\cake.php, line 12
+
+
+
+2018-11-16 11:01:22 Notice: Deprecated (16384): Checking a single plugin with Plugin::loaded() is deprecated. Use Plugin::isLoaded() instead. - C:\xampp\htdocs\project\vendor\wyrihaximus\twig-view\config\bootstrap.php, line: 11
+ You can disable deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED` in your config/app.php. in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Core\functions.php, line 310]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 159
+deprecationWarning - CORE\src\Core\functions.php, line 310
+Cake\Core\Plugin::loaded() - CORE\src\Core\Plugin.php, line 366
+require - ROOT\vendor\wyrihaximus\twig-view\config\bootstrap.php, line 11
+Cake\Core\BasePlugin::bootstrap() - CORE\src\Core\BasePlugin.php, line 239
+Cake\Http\BaseApplication::pluginBootstrap() - CORE\src\Http\BaseApplication.php, line 161
+Cake\Console\CommandRunner::bootstrap() - CORE\src\Console\CommandRunner.php, line 193
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 136
+[main] - ROOT\bin\cake.php, line 12
+
+
+
+2018-11-16 11:01:44 Notice: Deprecated (16384): Checking a single plugin with Plugin::loaded() is deprecated. Use Plugin::isLoaded() instead. - C:\xampp\htdocs\project\vendor\wyrihaximus\twig-view\config\bootstrap.php, line: 11
+ You can disable deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED` in your config/app.php. in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Core\functions.php, line 310]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 159
+deprecationWarning - CORE\src\Core\functions.php, line 310
+Cake\Core\Plugin::loaded() - CORE\src\Core\Plugin.php, line 366
+require - ROOT\vendor\wyrihaximus\twig-view\config\bootstrap.php, line 11
+Cake\Core\BasePlugin::bootstrap() - CORE\src\Core\BasePlugin.php, line 239
+Cake\Http\BaseApplication::pluginBootstrap() - CORE\src\Http\BaseApplication.php, line 161
+Cake\Console\CommandRunner::bootstrap() - CORE\src\Console\CommandRunner.php, line 193
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 136
+[main] - ROOT\bin\cake.php, line 12
+
+
+
+2018-11-16 11:29:09 Notice: Deprecated (16384): Checking a single plugin with Plugin::loaded() is deprecated. Use Plugin::isLoaded() instead. - C:\xampp\htdocs\project\vendor\wyrihaximus\twig-view\config\bootstrap.php, line: 11
+ You can disable deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED` in your config/app.php. in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Core\functions.php, line 310]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 159
+deprecationWarning - CORE\src\Core\functions.php, line 310
+Cake\Core\Plugin::loaded() - CORE\src\Core\Plugin.php, line 366
+require - ROOT\vendor\wyrihaximus\twig-view\config\bootstrap.php, line 11
+Cake\Core\BasePlugin::bootstrap() - CORE\src\Core\BasePlugin.php, line 239
+Cake\Http\BaseApplication::pluginBootstrap() - CORE\src\Http\BaseApplication.php, line 161
+Cake\Console\CommandRunner::bootstrap() - CORE\src\Console\CommandRunner.php, line 193
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 136
+[main] - ROOT\bin\cake.php, line 12
+
+
+
+2018-11-16 11:29:09 Notice: Notice (8): Undefined index: Procs in [C:\xampp\htdocs\project\vendor\cakephp\bake\src\View\Helper\DocBlockHelper.php, line 238]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 159
+Bake\View\Helper\DocBlockHelper::buildTableAnnotations() - ROOT\vendor\cakephp\bake\src\View\Helper\DocBlockHelper.php, line 238
+Twig_Template::getAttribute() - ROOT\vendor\twig\twig\lib\Twig\Template.php, line 679
+__TwigTemplate_5a9383ff007622de73eb1b2d8c7479db9de972cffa578ba5e2aca90f110ce434::doDisplay() - ROOT\tmp\cache\twigView\54\547c969c952d854490dfc0ef744ec432148c6f8e114abc258b5ae207fbbe3072.php, line 22
+Twig_Template::displayWithErrorHandling() - ROOT\vendor\twig\twig\lib\Twig\Template.php, line 432
+Twig_Template::display() - ROOT\vendor\twig\twig\lib\Twig\Template.php, line 403
+Twig_Template::render() - ROOT\vendor\twig\twig\lib\Twig\Template.php, line 411
+WyriHaximus\TwigView\View\TwigView::_render() - ROOT\vendor\wyrihaximus\twig-view\src\View\TwigView.php, line 180
+Bake\View\BakeView::render() - ROOT\vendor\cakephp\bake\src\View\BakeView.php, line 146
+Bake\Shell\Task\BakeTemplateTask::generate() - ROOT\vendor\cakephp\bake\src\Shell\Task\BakeTemplateTask.php, line 91
+Bake\Shell\Task\ModelTask::bakeTable() - ROOT\vendor\cakephp\bake\src\Shell\Task\ModelTask.php, line 971
+Bake\Shell\Task\ModelTask::bake() - ROOT\vendor\cakephp\bake\src\Shell\Task\ModelTask.php, line 115
+Bake\Shell\Task\ModelTask::main() - ROOT\vendor\cakephp\bake\src\Shell\Task\ModelTask.php, line 101
+Bake\Shell\BakeShell::Bake\Shell\{closure}() - ROOT\vendor\cakephp\bake\src\Shell\BakeShell.php, line 273
+Cake\Collection\Collection::each() - CORE\src\Collection\CollectionTrait.php, line 51
+Bake\Shell\BakeShell::all() - ROOT\vendor\cakephp\bake\src\Shell\BakeShell.php, line 274
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 518
+Cake\Console\CommandRunner::runShell() - CORE\src\Console\CommandRunner.php, line 342
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 164
+[main] - ROOT\bin\cake.php, line 12
+
+
+
+2018-11-16 11:29:09 Notice: Notice (8): Undefined index: Order in [C:\xampp\htdocs\project\vendor\cakephp\bake\src\View\Helper\DocBlockHelper.php, line 238]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 159
+Bake\View\Helper\DocBlockHelper::buildTableAnnotations() - ROOT\vendor\cakephp\bake\src\View\Helper\DocBlockHelper.php, line 238
+Twig_Template::getAttribute() - ROOT\vendor\twig\twig\lib\Twig\Template.php, line 679
+__TwigTemplate_5a9383ff007622de73eb1b2d8c7479db9de972cffa578ba5e2aca90f110ce434::doDisplay() - ROOT\tmp\cache\twigView\54\547c969c952d854490dfc0ef744ec432148c6f8e114abc258b5ae207fbbe3072.php, line 22
+Twig_Template::displayWithErrorHandling() - ROOT\vendor\twig\twig\lib\Twig\Template.php, line 432
+Twig_Template::display() - ROOT\vendor\twig\twig\lib\Twig\Template.php, line 403
+Twig_Template::render() - ROOT\vendor\twig\twig\lib\Twig\Template.php, line 411
+WyriHaximus\TwigView\View\TwigView::_render() - ROOT\vendor\wyrihaximus\twig-view\src\View\TwigView.php, line 180
+Bake\View\BakeView::render() - ROOT\vendor\cakephp\bake\src\View\BakeView.php, line 146
+Bake\Shell\Task\BakeTemplateTask::generate() - ROOT\vendor\cakephp\bake\src\Shell\Task\BakeTemplateTask.php, line 91
+Bake\Shell\Task\ModelTask::bakeTable() - ROOT\vendor\cakephp\bake\src\Shell\Task\ModelTask.php, line 971
+Bake\Shell\Task\ModelTask::bake() - ROOT\vendor\cakephp\bake\src\Shell\Task\ModelTask.php, line 115
+Bake\Shell\Task\ModelTask::main() - ROOT\vendor\cakephp\bake\src\Shell\Task\ModelTask.php, line 101
+Bake\Shell\BakeShell::Bake\Shell\{closure}() - ROOT\vendor\cakephp\bake\src\Shell\BakeShell.php, line 273
+Cake\Collection\Collection::each() - CORE\src\Collection\CollectionTrait.php, line 51
+Bake\Shell\BakeShell::all() - ROOT\vendor\cakephp\bake\src\Shell\BakeShell.php, line 274
+Cake\Console\Shell::runCommand() - CORE\src\Console\Shell.php, line 518
+Cake\Console\CommandRunner::runShell() - CORE\src\Console\CommandRunner.php, line 342
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 164
+[main] - ROOT\bin\cake.php, line 12
+
+
+
+2018-11-16 11:29:19 Notice: Deprecated (16384): Checking a single plugin with Plugin::loaded() is deprecated. Use Plugin::isLoaded() instead. - C:\xampp\htdocs\project\vendor\wyrihaximus\twig-view\config\bootstrap.php, line: 11
+ You can disable deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED` in your config/app.php. in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Core\functions.php, line 310]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 159
+deprecationWarning - CORE\src\Core\functions.php, line 310
+Cake\Core\Plugin::loaded() - CORE\src\Core\Plugin.php, line 366
+require - ROOT\vendor\wyrihaximus\twig-view\config\bootstrap.php, line 11
+Cake\Core\BasePlugin::bootstrap() - CORE\src\Core\BasePlugin.php, line 239
+Cake\Http\BaseApplication::pluginBootstrap() - CORE\src\Http\BaseApplication.php, line 161
+Cake\Console\CommandRunner::bootstrap() - CORE\src\Console\CommandRunner.php, line 193
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 136
+[main] - ROOT\bin\cake.php, line 12
+
+
+
+2018-11-16 11:29:31 Notice: Deprecated (16384): Checking a single plugin with Plugin::loaded() is deprecated. Use Plugin::isLoaded() instead. - C:\xampp\htdocs\project\vendor\wyrihaximus\twig-view\config\bootstrap.php, line: 11
+ You can disable deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED` in your config/app.php. in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Core\functions.php, line 310]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 159
+deprecationWarning - CORE\src\Core\functions.php, line 310
+Cake\Core\Plugin::loaded() - CORE\src\Core\Plugin.php, line 366
+require - ROOT\vendor\wyrihaximus\twig-view\config\bootstrap.php, line 11
+Cake\Core\BasePlugin::bootstrap() - CORE\src\Core\BasePlugin.php, line 239
+Cake\Http\BaseApplication::pluginBootstrap() - CORE\src\Http\BaseApplication.php, line 161
+Cake\Console\CommandRunner::bootstrap() - CORE\src\Console\CommandRunner.php, line 193
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 136
+[main] - ROOT\bin\cake.php, line 12
+
+
+
+2018-11-16 11:29:40 Notice: Deprecated (16384): Checking a single plugin with Plugin::loaded() is deprecated. Use Plugin::isLoaded() instead. - C:\xampp\htdocs\project\vendor\wyrihaximus\twig-view\config\bootstrap.php, line: 11
+ You can disable deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED` in your config/app.php. in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Core\functions.php, line 310]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 159
+deprecationWarning - CORE\src\Core\functions.php, line 310
+Cake\Core\Plugin::loaded() - CORE\src\Core\Plugin.php, line 366
+require - ROOT\vendor\wyrihaximus\twig-view\config\bootstrap.php, line 11
+Cake\Core\BasePlugin::bootstrap() - CORE\src\Core\BasePlugin.php, line 239
+Cake\Http\BaseApplication::pluginBootstrap() - CORE\src\Http\BaseApplication.php, line 161
+Cake\Console\CommandRunner::bootstrap() - CORE\src\Console\CommandRunner.php, line 193
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 136
+[main] - ROOT\bin\cake.php, line 12
+
+
+
+2018-11-16 11:36:29 Notice: Deprecated (16384): Checking a single plugin with Plugin::loaded() is deprecated. Use Plugin::isLoaded() instead. - C:\xampp\htdocs\project\vendor\wyrihaximus\twig-view\config\bootstrap.php, line: 11
+ You can disable deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED` in your config/app.php. in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Core\functions.php, line 310]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 159
+deprecationWarning - CORE\src\Core\functions.php, line 310
+Cake\Core\Plugin::loaded() - CORE\src\Core\Plugin.php, line 366
+require - ROOT\vendor\wyrihaximus\twig-view\config\bootstrap.php, line 11
+Cake\Core\BasePlugin::bootstrap() - CORE\src\Core\BasePlugin.php, line 239
+Cake\Http\BaseApplication::pluginBootstrap() - CORE\src\Http\BaseApplication.php, line 161
+Cake\Console\CommandRunner::bootstrap() - CORE\src\Console\CommandRunner.php, line 193
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 136
+[main] - ROOT\bin\cake.php, line 12
+
+
+
+2018-11-16 11:37:27 Notice: Deprecated (16384): Checking a single plugin with Plugin::loaded() is deprecated. Use Plugin::isLoaded() instead. - C:\xampp\htdocs\project\vendor\wyrihaximus\twig-view\config\bootstrap.php, line: 11
+ You can disable deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED` in your config/app.php. in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Core\functions.php, line 310]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 159
+deprecationWarning - CORE\src\Core\functions.php, line 310
+Cake\Core\Plugin::loaded() - CORE\src\Core\Plugin.php, line 366
+require - ROOT\vendor\wyrihaximus\twig-view\config\bootstrap.php, line 11
+Cake\Core\BasePlugin::bootstrap() - CORE\src\Core\BasePlugin.php, line 239
+Cake\Http\BaseApplication::pluginBootstrap() - CORE\src\Http\BaseApplication.php, line 161
+Cake\Console\CommandRunner::bootstrap() - CORE\src\Console\CommandRunner.php, line 193
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 136
+[main] - ROOT\bin\cake.php, line 12
+
+
+
+2018-11-16 11:37:43 Notice: Deprecated (16384): Checking a single plugin with Plugin::loaded() is deprecated. Use Plugin::isLoaded() instead. - C:\xampp\htdocs\project\vendor\wyrihaximus\twig-view\config\bootstrap.php, line: 11
+ You can disable deprecation warnings by setting `Error.errorLevel` to `E_ALL & ~E_USER_DEPRECATED` in your config/app.php. in [C:\xampp\htdocs\project\vendor\cakephp\cakephp\src\Core\functions.php, line 310]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 159
+deprecationWarning - CORE\src\Core\functions.php, line 310
+Cake\Core\Plugin::loaded() - CORE\src\Core\Plugin.php, line 366
+require - ROOT\vendor\wyrihaximus\twig-view\config\bootstrap.php, line 11
+Cake\Core\BasePlugin::bootstrap() - CORE\src\Core\BasePlugin.php, line 239
+Cake\Http\BaseApplication::pluginBootstrap() - CORE\src\Http\BaseApplication.php, line 161
+Cake\Console\CommandRunner::bootstrap() - CORE\src\Console\CommandRunner.php, line 193
+Cake\Console\CommandRunner::run() - CORE\src\Console\CommandRunner.php, line 136
+[main] - ROOT\bin\cake.php, line 12
+
+
+

@@ -19,7 +19,8 @@ class OrderdetailControllerTest extends TestCase
      */
     public $fixtures = [
         'app.Orderdetail',
-        'app.Products'
+        'app.Procs',
+        'app.Order'
     ];
 
     /**

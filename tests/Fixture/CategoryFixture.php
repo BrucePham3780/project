@@ -49,8 +49,8 @@ class CategoryFixture extends TestFixture
             [
                 'id' => 1,
                 'name' => 'Lorem ipsum dolor sit amet',
-                'created' => '2018-11-12 08:13:09',
-                'modified' => '2018-11-12 08:13:09'
+                'created' => '2018-11-16 11:36:31',
+                'modified' => '2018-11-16 11:36:31'
             ],
         ];
         parent::init();

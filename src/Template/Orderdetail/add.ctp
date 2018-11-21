@@ -8,8 +8,8 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('List Orderdetail'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Products'), ['controller' => 'Products', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Product'), ['controller' => 'Products', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Order'), ['controller' => 'Order', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Order'), ['controller' => 'Order', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="orderdetail form large-9 medium-8 columns content">
@@ -17,9 +17,10 @@
     <fieldset>
         <legend><?= __('Add Orderdetail') ?></legend>
         <?php
-            echo $this->Form->control('proc_id', ['options' => $products, 'empty' => true]);
+            echo $this->Form->control('proc_id');
             echo $this->Form->control('qty');
             echo $this->Form->control('tt_price');
+            echo $this->Form->control('order_id', ['options' => $order, 'empty' => true]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

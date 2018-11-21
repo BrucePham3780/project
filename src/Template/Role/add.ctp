@@ -4,23 +4,63 @@
  * @var \App\Model\Entity\Role $role
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Role'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="role form large-9 medium-8 columns content">
-    <?= $this->Form->create($role) ?>
-    <fieldset>
-        <legend><?= __('Add Role') ?></legend>
-        <?php
-            echo $this->Form->control('name');
-            echo $this->Form->control('descr');
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <strong>Role</strong>
+        </div>
+        <div class="card-body card-block">
+            <?= $this->Form->create($role,['type'=>'file'], array('class'=>'card-horizontal', 'id'=>'form1','runat'=>'server')) ?>
+            <div class="col col-md-6">
+             <?php
+             echo $this->Form->label('Name');
+             echo $this->Form->control('name', array(
+                'type'=>'text',
+                'class'=>'form-control',
+                'placeholder'=>'Enter name...',
+                'label'=> false
+
+            ));
+            ?>  
+        </div>
+        
+        <div class="col col-md-6">
+            <?php                
+            echo $this->Form->label('Description');
+            echo $this->Form->control('descr' ,array(
+                'type' => 'text',
+                'placeholder'=>'Enter description...',
+                'class'=>'form-control',
+                'label'=> false
+
+            ));
+            ?>
+        </div>      
+    </div>
+    <div class="card-footer">
+        <?= $this->Form->button("<i class='fa fa-dot-circle-o'></i> Submit", array(
+            'type' => 'submit',
+            'class'=>'btn btn-primary btn-sm', 
+
+            'escape' => false )) 
+            ?>
+            <?= $this->Form->button("<i class='fa fa-ban'></i> Reset", array(
+                'type' => 'reset',
+                'class'=>'btn btn-danger btn-sm', 
+
+                'escape' => false )) 
+                ?>
+
+
+                <?= $this->Form->end() ?>            
+            </div>        
+
+
+        </div>
+    </div>
 </div>
+
+
+

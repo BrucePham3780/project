@@ -23,7 +23,6 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('ordetail_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('status') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('tt_price') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
@@ -36,7 +35,6 @@
             <tr>
                 <td><?= $this->Number->format($order->id) ?></td>
                 <td><?= $order->has('user') ? $this->Html->link($order->user->name, ['controller' => 'Users', 'action' => 'view', $order->user->id]) : '' ?></td>
-                <td><?= $order->has('orderdetail') ? $this->Html->link($order->orderdetail->id, ['controller' => 'Orderdetail', 'action' => 'view', $order->orderdetail->id]) : '' ?></td>
                 <td><?= h($order->status) ?></td>
                 <td><?= $this->Number->format($order->tt_price) ?></td>
                 <td><?= h($order->created) ?></td>

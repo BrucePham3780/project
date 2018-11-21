@@ -9,7 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Orderdetail Model
  *
- * @property \App\Model\Table\ProductsTable|\Cake\ORM\Association\BelongsTo $Products
+ * @property \App\Model\Table\ProcsTable|\Cake\ORM\Association\BelongsTo $Procs
+ * @property \App\Model\Table\OrderTable|\Cake\ORM\Association\BelongsTo $Order
  *
  * @method \App\Model\Entity\Orderdetail get($primaryKey, $options = [])
  * @method \App\Model\Entity\Orderdetail newEntity($data = null, array $options = [])
@@ -37,8 +38,11 @@ class OrderdetailTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Products', [
+        $this->belongsTo('Procs', [
             'foreignKey' => 'proc_id'
+        ]);
+        $this->belongsTo('Order', [
+            'foreignKey' => 'order_id'
         ]);
     }
 
@@ -74,7 +78,8 @@ class OrderdetailTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['proc_id'], 'Products'));
+        $rules->add($rules->existsIn(['proc_id'], 'Procs'));
+        $rules->add($rules->existsIn(['order_id'], 'Order'));
 
         return $rules;
     }

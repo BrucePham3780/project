@@ -77,11 +77,15 @@
                                             ['controller' => 'role','action' => 'edit', $role1->id], 
                                             array('escape' => false)) ?>
                                         </button>
-                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">>
-                                            <?= $this->Form->postLink($this->Html->tag('i', '', array('class' => 'zmdi zmdi-delete')),
-                                            ['action' => 'delete', $role1->id],
-                                            array('escape'=>false)) ?>
-                                        </button>
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                <?= $this->Form->postLink('<i class="fa fa-trash"></i> ',
+                                                    ['action' => 'delete', $role1->id], 
+                                                    [
+                                                        'escape' => false,
+                                                        'confirm' => __('Are you sure, you want to delete {0}?', $role1->name)
+                                                    ]
+                                                ) ?>
+                                            </button>
                                     </div>
                                 </td>
 
@@ -93,7 +97,7 @@
             </table>
 
 
-</div>
+        </div>
 
 </div>
 <!-- END DATA TABLE -->

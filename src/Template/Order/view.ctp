@@ -27,10 +27,6 @@
             <td><?= $order->has('user') ? $this->Html->link($order->user->name, ['controller' => 'Users', 'action' => 'view', $order->user->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Orderdetail') ?></th>
-            <td><?= $order->has('orderdetail') ? $this->Html->link($order->orderdetail->id, ['controller' => 'Orderdetail', 'action' => 'view', $order->orderdetail->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Status') ?></th>
             <td><?= h($order->status) ?></td>
         </tr>
@@ -51,6 +47,35 @@
             <td><?= h($order->modified) ?></td>
         </tr>
     </table>
+    <div class="related">
+        <h4><?= __('Related Orderdetail') ?></h4>
+        <?php if (!empty($order->orderdetail)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Proc Id') ?></th>
+                <th scope="col"><?= __('Qty') ?></th>
+                <th scope="col"><?= __('Tt Price') ?></th>
+                <th scope="col"><?= __('Order Id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($order->orderdetail as $orderdetail): ?>
+            <tr>
+                <td><?= h($orderdetail->id) ?></td>
+                <td><?= h($orderdetail->proc_id) ?></td>
+                <td><?= h($orderdetail->qty) ?></td>
+                <td><?= h($orderdetail->tt_price) ?></td>
+                <td><?= h($orderdetail->order_id) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'Orderdetail', 'action' => 'view', $orderdetail->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Orderdetail', 'action' => 'edit', $orderdetail->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Orderdetail', 'action' => 'delete', $orderdetail->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orderdetail->id)]) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
     <div class="related">
         <h4><?= __('Related Shipping') ?></h4>
         <?php if (!empty($order->shipping)): ?>
