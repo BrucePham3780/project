@@ -28,7 +28,7 @@
             <strong>Users</strong>
         </div>
         <div class="card-body card-block">
-            <?= $this->Form->create($users,['type'=>'file'], array('class'=>'card-horizontal', 'id'=>'form1','runat'=>'server')) ?>
+            <?= $this->Form->create($user,['type'=>'file'], array('class'=>'card-horizontal', 'id'=>'form1','runat'=>'server')) ?>
             
             
             <div class="row form-group">

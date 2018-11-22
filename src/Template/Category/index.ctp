@@ -70,12 +70,12 @@
                                     <div class="table-data-feature">
                                         <button class="item" data-toggle="tooltip" data-placement="top" title="More">
                                             <?= $this->Html->link($this->Html->tag('i', '', array('class' => 'zmdi zmdi-info-outline')),
-                                            ['controller' => 'role','action' => 'view', $category1->id],
+                                            ['controller' => 'category','action' => 'view', $category1->id],
                                              array('escape' => false)) ?>
                                         </button>
                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">>
                                             <?= $this->Html->link($this->Html->tag('i', '', array('class' => 'zmdi zmdi-edit')),
-                                            ['controller' => 'role','action' => 'edit', $category1->id], 
+                                            ['controller' => 'category','action' => 'edit', $category1->id], 
                                             array('escape' => false)) ?>
                                         </button>
                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">

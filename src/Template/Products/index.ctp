@@ -67,6 +67,7 @@
                 </thead>            
 
                 <tbody>
+
                     <?php foreach ($products as $products1): ?>
                         <tr class="tr-shadow">
 
@@ -75,8 +76,15 @@
                                 <?php else: ?>
                                    <td></td>
                                 <?php endif; ?>
+                                
+                                <?php if (!empty($products1->images)): ?>
+                                    <td><?= $products1->name ?></td>
+                                <?php else: ?>
+                                   <td><?= $products1->name ?></td>
+                                <?php endif; ?>
+                               
 
-                               <td><?= $products1->name ?></td>
+
                                <td><?= $products1->has('category') ? $this->Html->link($products1->category->name, ['controller' => 'Category', 'action' => 'view', $products1->category->id]) : '' ?></td>
                                <td><?= $products1->price ?></td>
 

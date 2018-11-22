@@ -70,7 +70,7 @@ class ProductsController extends AppController
                     }
 
             $product = $this->Products->patchEntity($product, $this->request->getData());
-            // print_r($product); die();
+            
             if ($this->Products->save($product)) {
                 $this->Flash->success(__('The product has been saved.'));
 
@@ -80,7 +80,7 @@ class ProductsController extends AppController
         }
         $category = $this->Products->Category->find('list', ['limit' => 200]);
 
-        $this->set(compact('product', 'category'));
+        $this->set(compact('product','category'));
         $this->set('_serialize',['product']);
     }
 

@@ -157,7 +157,6 @@
                     'empty' => true,
                     'id' => "cate_id",
                     'class'=>'category',
-                    'name' => 'category',
                     'options' => $category,
                     'label' => false,
                     'class' => 'form-control'

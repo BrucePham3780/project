@@ -65,6 +65,8 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
 
+
+
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */
@@ -91,6 +93,8 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->fallbacks(DashedRoute::class);
 });
+
+
 
 /**
  * If you need a different set of middleware or none at all,
