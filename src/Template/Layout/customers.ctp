@@ -66,12 +66,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body class="animsition">
 
     <?php echo $this->element('header_user'); ?>
-    
+
     
 
-     <br>
-
-     <?php echo $this->element('content'); ?>
+     <?= $this->fetch('content'); ?>
 
      <br>
 
@@ -100,12 +98,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <script type="text/javascript" src="/vendor1/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 <script type="text/javascript" src="/vendor1/select2/select2.min.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     $(".selection-1").select2({
         minimumResultsForSearch: 20,
         dropdownParent: $('#dropDownSelect1')
     });
-</script>
+</script> -->
 <!--===============================================================================================-->
 <script type="text/javascript" src="/vendor1/slick/slick.min.js"></script>
 <script type="text/javascript" src="/js/slick-custom.js"></script>
@@ -130,21 +128,22 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     });
 </script>
 
-<script type="text/javascript">
-    $('.block2-btn-addcart').each(function(){
-        var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-        $(this).on('click', function(){
-            swal(nameProduct, "is added to cart !", "success");
-        });
-    });
 
-    $('.block2-btn-addwishlist').each(function(){
-        var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-        $(this).on('click', function(){
-            swal(nameProduct, "is added to wishlist !", "success");
+<script type="text/javascript">
+        $('.block2-btn-addcart').each(function(){
+            var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+            $(this).on('click', function(){
+                swal(nameProduct, "is added to cart !", "success");
+            });
         });
-    });
-</script>
+
+        $('.block2-btn-addwishlist').each(function(){
+            var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+            $(this).on('click', function(){
+                swal(nameProduct, "is added to wishlist !", "success");
+            });
+        });
+    </script>
 
 <script type="text/javascript">
     $('.block2-btn-addcart').each(function(){

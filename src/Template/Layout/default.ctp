@@ -63,9 +63,21 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
             <?php echo $this->element('header_desktop'); ?>
 
-            <?php echo $this->element('content'); ?>
+            
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <?= $this->fetch('content'); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>  
 
         </div>
+        
     </div>
 
     <script src="/vendor/jquery-3.2.1.min.js"></script>

@@ -23,7 +23,7 @@ class CustomersController extends AppController
      */
     public function index()
     {
-        $this->viewBuilder()->setLayout('customers2');
+        $this->viewBuilder()->setLayout('customers');
 
         $result = $this->loadModel('products');
         $data= $result->find();
