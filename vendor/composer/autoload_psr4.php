@@ -51,5 +51,7 @@ return array(
     'App\\Test\\' => array($baseDir . '/tests'),
     'App\\' => array($baseDir . '/src'),
     'Ajgl\\Twig\\Extension\\' => array($vendorDir . '/ajgl/breakpoint-twig-extension/src'),
+    'Admin\\Test\\' => array($baseDir . '/plugins/Admin/tests'),
+    'Admin\\' => array($baseDir . '/plugins/Admin/src'),
     '' => array($vendorDir . '/asm89/twig-cache-extension/lib'),
 );

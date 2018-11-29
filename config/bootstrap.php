@@ -196,6 +196,9 @@ Type::build('datetime')
 Type::build('timestamp')
     ->useImmutable();
 
+
+
+
 /*
  * Custom Inflector rules, can be set to correctly pluralize or singularize
  * table, model, controller names or whatever other string is passed to the
@@ -205,3 +208,7 @@ Type::build('timestamp')
 //Inflector::rules('irregular', ['red' => 'redlings']);
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
+
+// Plugin::load('Admin', ['bootstrap' => false, 'routes' => true]);
+
+// Application::addPlugin('Admin', ['bootstrap' => false, 'routes' => true]);
