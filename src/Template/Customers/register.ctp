@@ -1,162 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Login V4</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!--===============================================================================================-->   
+   <link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
+   <!--===============================================================================================-->
+   <link rel="stylesheet" type="text/css" href="/vendor2/bootstrap/css/bootstrap.min.css">
+   <!--===============================================================================================-->
+   <link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+   <!--===============================================================================================-->
+   <link rel="stylesheet" type="text/css" href="/fonts/iconic/css/material-design-iconic-font.min.css">
+   <!--===============================================================================================-->
+   <link rel="stylesheet" type="text/css" href="/vendor2/animate/animate.css">
+   <!--===============================================================================================-->   
+   <link rel="stylesheet" type="text/css" href="/vendor2/css-hamburgers/hamburgers.min.css">
+   <!--===============================================================================================-->
+   <link rel="stylesheet" type="text/css" href="/vendor2/animsition/css/animsition.min.css">
+   <!--===============================================================================================-->
+   <link rel="stylesheet" type="text/css" href="/vendor2/select2/select2.min.css">
+   <!--===============================================================================================-->   
+   <link rel="stylesheet" type="text/css" href="/vendor2/daterangepicker/daterangepicker.css">
+   <!--===============================================================================================-->
+   <link rel="stylesheet" type="text/css" href="/css/util1.css">
+   <link rel="stylesheet" type="text/css" href="/css/main1.css">
+   <!--===============================================================================================-->
+</head>
+<body>
 
+   <div class="limiter">
+      <div class="container-login100" style="background-image: url('/images/bg-01.jpg');">
+         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+            <form class="login100-form validate-form">
+               <span class="login100-form-title p-b-49">
+                  Register
+               </span>
+               
+               
+                  <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+                     <span class="label-input100">Username</span>
+                     <input class="input100" type="text" name="name" placeholder="Type your username">
+                     <span class="focus-input100"></span>
+                  </div>
 
+                  <div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
+                     <span class="label-input100">Password</span>
+                     <input class="input100" type="password" name="pass" placeholder="Type your password">
+                     <span class="focus-input100"></span>
+                  </div>
 
-<!-- Content page -->
-	
-	<div class="container" style="background-color:#b2c0bd30">
-		
-		<form class="form-horizontal" role="form" method="POST" action="#">
-			<div class="row">
-				<div class="col-md-3"></div>
-				<div class="col-md-6">
-					<h2>Register</h2>
-					<hr>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3 field-label-responsive">
-					<label for="name">Name</label>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-							<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-							<input type="text" name="name" class="form-control" id="name"
-							placeholder="John Doe" required autofocus>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					
-				</div>
+                  <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+                     <span class="label-input100">Username</span>
+                     <input class="input100" type="text" name="name" placeholder="Type your username">
+                     <span class="focus-input100"></span>
+                  </div>
 
+               
+               
+               
+                  <div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
+                     <span class="label-input100">Password</span>
+                     <input class="input100" type="password" name="pass" placeholder="Type your password">
+                     <span class="focus-input100"></span>
+                  </div>
 
-			</div>
+                  <div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
+                     <span class="label-input100">Password</span>
+                     <input class="input100" type="password" name="pass" placeholder="Type your password">
+                     <span class="focus-input100"></span>
+                  </div>
 
-			<div class="row">
-				<div class="col-md-3 field-label-responsive">
-					<label for="email">E-Mail Address</label>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-							<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-envelope"></i></div>
-							<input type="email" name="email" class="form-control" id="email"
-							placeholder="you@example.com" required autofocus>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3 field-label-responsive">
-					<label for="password">Password</label>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group has-danger">
-						<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-							<div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-							<input type="password" name="password" class="form-control" id="password"
-							placeholder="Password" required>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="form-control-feedback">
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3 field-label-responsive">
-					<label for="password">Confirm Password</label>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-							<div class="input-group-addon" style="width: 2.6rem">
-								<i class="fa fa-repeat"></i>
-							</div>
-							<input type="password" name="password-confirmation" class="form-control"
-							id="password-confirm" placeholder="Password" required>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3 field-label-responsive">
-					<label>Phone Number</label>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-							<div class="input-group-addon" style="width: 2.6rem">
-								<i class="fa fa-phone"></i>
-							</div>
-							<input type="text" name="phoneNum" class="form-control"
-							id="phoneNum" placeholder="Phone Number" required>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3 field-label-responsive">
-					<label>Address</label>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-							<div class="input-group-addon" style="width: 2.6rem">
-								<i class="fas fa-map-marked-alt"></i>
-							</div>
-							<input type="text" name="address" class="form-control"
-							id="address" placeholder="Address" required>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- <div class="row">
-				<div class="col-md-6 field-label-responsive">
-					<label for="avatar">Avatar</label>
-				</div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<input type="file"  id="imgInp" name="images">
-					</div>
-				</div>
-				<div class="col-md-3">
-						<img src="" id="preview_img">
-				</div>
+                  <div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
+                     <span class="label-input100">Password</span>
+                     <input class="input100" type="password" name="pass" placeholder="Type your password">
+                     <span class="focus-input100"></span>
+                  </div>
 
-			</div> -->
-			<div class="row">
-				<div class="col-md-3"></div>
-				<div class="col-md-6">
-					<button type="submit" class="btn btn-success"><i class="fas fa-user-plus"></i> Register</button>
-				</div>
-			</div>
-			<br>
-		</form>
-	</div>
+               
+               
+               <!-- <div class="text p-t-8 p-b-31">
+                  <a href="#">
+                     Forgot password?
+                  </a>
+               </div> -->
 
+               <div class="text p-t-8 p-b-31">
+                  
+               </div>
+               
+               <div class="container-login100-form-btn">
+                  <div class="wrap-login100-form-btn">
+                     <div class="login100-form-bgbtn"></div>
+                     <button class="login100-form-btn">
+                        Register
+                     </button>
+                  </div>
+               </div>
 
+               <div class="txt1 text-center p-t-54 p-b-20">
+               </div>
 
-<script type="text/javascript" src="/vendor1/jquery/jquery-3.2.1.min.js"></script>
+               <div class="flex-c-m">
+                  <a href="#" class="login100-social-item bg1">
+                     <i class="fa fa-facebook"></i>
+                  </a>
 
+                  <!-- <a href="#" class="login100-social-item bg2">
+                     <i class="fa fa-twitter"></i>
+                  </a> -->
 
-<script type="text/javascript">
-    function imageURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                $('#preview_img').attr('src', e.target.result)
-                .width('auto')
-                .height('auto');
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
+                  <a href="#" class="login100-social-item bg3">
+                     <i class="fa fa-google"></i>
+                  </a>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
    
-</script>
+
+   <div id="dropDownSelect1"></div>
+   
+   <!--===============================================================================================-->
+   <script src="/vendor2/jquery/jquery-3.2.1.min.js"></script>
+   <!--===============================================================================================-->
+   <script src="/vendor2/animsition/js/animsition.min.js"></script>
+   <!--===============================================================================================-->
+   <script src="/vendor2/bootstrap/js/popper.js"></script>
+   <script src="/vendor2/bootstrap/js/bootstrap.min.js"></script>
+   <!--===============================================================================================-->
+   <script src="/vendor2/select2/select2.min.js"></script>
+   <!--===============================================================================================-->
+   <script src="/vendor2/daterangepicker/moment.min.js"></script>
+   <script src="/vendor2/daterangepicker/daterangepicker.js"></script>
+   <!--===============================================================================================-->
+   <script src="/vendor2/countdowntime/countdowntime.js"></script>
+   <!--===============================================================================================-->
+   <script src="/js/main2.js"></script>
+
 </body>
 </html>

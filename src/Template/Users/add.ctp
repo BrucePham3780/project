@@ -28,7 +28,7 @@
             <strong>Users</strong>
         </div>
         <div class="card-body card-block">
-            <?= $this->Form->create($user,['type'=>'file'], array('class'=>'card-horizontal', 'id'=>'form1','runat'=>'server')) ?>
+            <?= $this->Form->create($user2,['type'=>'file'], array('class'=>'card-horizontal', 'id'=>'form1','runat'=>'server')) ?>
             
             
             <div class="row form-group">
@@ -89,6 +89,33 @@
                     'type'=>'text',
                     'class'=>'form-control',
                     'placeholder'=>'Enter description...',
+                    'label'=> false
+
+                ));
+                ?>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col col-md-6">
+                <?php
+                echo $this->Form->label('Address');
+                echo $this->Form->control('address', array(
+                    'type'=>'text',
+                    'class'=>'form-control',
+                    'placeholder'=>'Enter address...',
+                    'label'=> false
+
+                ));
+                ?>
+            </div>
+            <div class="col col-md-6">
+                <?php
+                echo $this->Form->label('Phone Numbers');
+                echo $this->Form->control('phoneNum', array(
+                    'type'=>'text',
+                    'class'=>'form-control',
+                    'placeholder'=>'Enter phone numbers...',
                     'label'=> false
 
                 ));

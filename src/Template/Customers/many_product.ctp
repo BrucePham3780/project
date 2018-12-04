@@ -4,7 +4,10 @@
 			<div class="row">
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
 					<div class="leftbar p-r-20 p-r-0-sm">
+
 						<!--  -->
+					
+
 						<h4 class="m-text14 p-b-7">
 							Categories
 						</h4>
@@ -15,30 +18,15 @@
 									All
 								</a>
 							</li>
-
+						<?php foreach ($category as $category1): ?>
 							<li class="p-t-4">
 								<a href="#" class="s-text13">
-									Women
+									<?= $category1->name?>
 								</a>
 							</li>
+						<?php endforeach; ?>
 
-							<li class="p-t-4">
-								<a href="#" class="s-text13">
-									Men
-								</a>
-							</li>
-
-							<li class="p-t-4">
-								<a href="#" class="s-text13">
-									Kids
-								</a>
-							</li>
-
-							<li class="p-t-4">
-								<a href="#" class="s-text13">
-									Accesories
-								</a>
-							</li>
+							
 						</ul>
 
 						<!--  -->
@@ -87,13 +75,7 @@
 							</ul>
 						</div>
 
-						<div class="search-product pos-relative bo4 of-hidden">
-							<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
-
-							<button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
-								<i class="fs-12 fa fa-search" aria-hidden="true"></i>
-							</button>
-						</div>
+						
 					</div>
 				</div>
 
@@ -122,11 +104,17 @@
 								</select>
 							</div>
 						</div>
+						
+						<div class="search-product pos-relative bo4 of-hidden">
+							<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
 
-						<span class="s-text8 p-t-5 p-b-5">
-							Showing 1–12 of 16 results
-						</span>
+							<button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
+								<i class="fs-12 fa fa-search" aria-hidden="true"></i>
+							</button>
+						</div>
 					</div>
+
+
 
 					<!-- Product -->
 					<div class="row">
@@ -139,14 +127,18 @@
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
 									
-									<?=$this->Html->image($product1->images) ?>
+									
+									<?= $this->Html->link(
+										$this->Html->image($product1->images, array('max-wight'=>'200px', 'wight'=>'270px', 'height'=>'340px', 'max-height'=>'340px')),
+										array(
+											'controller' => 'customers', 
+											'action' => 'product',
+											$product1->id
+										), array('escape' => false)
+									)	
+									?>
 									
 									<div class="block2-overlay trans-0-4">
-										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-											<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-											<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-										</a>
-
 										<div class="block2-btn-addcart w-size1 trans-0-4">
 											<!-- Button -->
 											<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
@@ -156,11 +148,15 @@
 									</div>
 								</div>
 
-								<div class="block2-txt p-t-20">
-									<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-										<?= $product1->name?>
-									</a>
+								<div class="block2-txt p-t-20" align="center">
 
+										<?= $this->Html->link($this->Html->tag('',$product1->name),
+										['controller' => 'customers','action' => 'product',$product1->id],
+										array('escape' => false,'class'=>'block2-name dis-block s-text3 p-b-5')) ?>
+									
+									
+								</div>
+								<div align="center">
 									<span class="block2-price m-text6 p-r-5">
 										$<?= $product1->price?>
 									</span>
@@ -180,3 +176,5 @@
 				</div>
 			</div>
 		</div>
+
+	

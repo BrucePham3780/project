@@ -51,6 +51,7 @@
                     <thead>
                         <tr>
                             <th>name</th>
+                            <th>avatar</th>
                             <th>role</th>
                             <th>email</th>
                             <th>address</th>
@@ -60,31 +61,36 @@
                     </thead>            
 
                     <tbody>
-                        <?php foreach ($users as $users1): ?>
+                        <?php foreach ($users as $users2): ?>
                             <tr class="tr-shadow">
-                                <td><?= $users1->name ?></td>
-                                <td><?= $users1->has('role') ? $this->Html->link($users1->role->name, ['controller' => 'Role', 'action' => 'view', $users1->role->id]) : '' ?></td>
-                                <td><?= $users1->email ?></td>
-                                <td><?= $users1->address ?></td>
-                                <td><?= $users1->phoneNum ?></td>
+                                <td><?= $users2->name ?></td>
+                                <?php if (!empty($users2->images)): ?>
+                                    <td><?=$this->Html->image($users2->images, array('width'=>'80px', 'height'=>'80px')) ?></td>
+                                <?php else: ?>
+                                   <td></td>
+                                <?php endif; ?>
+                                <td><?= $users2->has('role') ? $this->Html->link($users2->role->name, ['controller' => 'Role', 'action' => 'view', $users2->role->id]) : '' ?></td>
+                                <td><?= $users2->email ?></td>
+                                <td><?= $users2->address ?></td>
+                                <td><?= $users2->phoneNum ?></td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item" data-toggle="tooltip" data-placement="top" title="More">
                                             <?= $this->Html->link($this->Html->tag('i', '', array('class' => 'zmdi zmdi-info-outline')),
-                                            ['controller' => 'users','action' => 'view', $users1->id],
+                                            ['controller' => 'users','action' => 'view', $users2->id],
                                              array('escape' => false)) ?>
                                         </button>
                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">>
                                             <?= $this->Html->link($this->Html->tag('i', '', array('class' => 'zmdi zmdi-edit')),
-                                            ['controller' => 'users','action' => 'edit', $users1->id], 
+                                            ['controller' => 'users','action' => 'edit', $users2->id], 
                                             array('escape' => false)) ?>
                                         </button>
                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">>
                                             <?= $this->Form->postLink('<i class="fa fa-trash"></i> ',
-                                                    ['action' => 'delete', $users1->id], 
+                                                    ['action' => 'delete', $users2->id], 
                                                     [
                                                         'escape' => false,
-                                                        'confirm' => __('Are you sure, you want to delete {0}?', $users1->name)
+                                                        'confirm' => __('Are you sure, you want to delete {0}?', $users2->name)
                                                     ]
                                                 ) ?>
                                         </button>

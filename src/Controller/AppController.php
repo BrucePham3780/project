@@ -45,6 +45,31 @@ class AppController extends Controller
             'enableBeforeRedirect' => false,
         ]);
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'loginAction'=> [
+                'controller' => '',
+                'action' => 'login', 
+                
+            ],
+            'authenticate' =>[
+                'Form' => [
+                    'fields' =>[
+                        'username'=>'email'
+                    ]
+                ]
+                
+            ],
+            'logoutRedirect'=> [
+                'controller' => 'Customers',
+                'action' => 'index', 
+                
+            ] 
+
+        ]);
+        // $this->Auth->allow();
+
+
+
 
         /*
          * Enable the following component for recommended CakePHP security settings.
@@ -52,4 +77,36 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
     }
-}
+
+    public function beforeRender(Event $event)
+    {
+       
+        $user1 = $this->Auth->user();
+        $this->set('user1',$user1);
+
+        // if($user1 && $user1['role_id'] != '1' ){
+        //    $cont = $this->request->controller;
+        //    $act = $this->request->action;
+        //    // Configure::read('Company.name');
+
+        //     pr($cont);
+        //     pr($act);
+        //      die();
+
+        //    // pr($cont,$act); pr(Configure::read('Company.name')); die();
+        // }    
+        
+        if (!array_key_exists('_serialize', $this->viewVars) &&
+            in_array($this->response->type(), ['application/json', 'application/xml'])
+        ) {
+            $this->set('_serialize', true);
+        }
+
+        // Login Check
+            if($this->request->session()->read('Auth.User')){
+                $this->set('loggedIn', true);   
+            } else {
+                $this->set('loggedIn', false); 
+            }
+        }
+    }

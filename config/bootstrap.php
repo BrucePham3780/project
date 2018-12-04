@@ -74,6 +74,7 @@ use Cake\I18n\Time;
 try {
     Configure::config('default', new PhpConfig());
     Configure::load('app', 'default', false);
+    // Configure::load('permission','default');
 } catch (\Exception $e) {
     exit($e->getMessage() . "\n");
 }
