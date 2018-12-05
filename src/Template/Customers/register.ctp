@@ -29,115 +29,140 @@
 </head>
 <body>
 
-   <div class="limiter">
-      <div class="container-login100" style="background-image: url('/images/bg-01.jpg');">
-         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-            <form class="login100-form validate-form">
-               <span class="login100-form-title p-b-49">
-                  Register
-               </span>
-               
-               
-                  <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
-                     <span class="label-input100">Username</span>
-                     <input class="input100" type="text" name="name" placeholder="Type your username">
-                     <span class="focus-input100"></span>
-                  </div>
+ <div class="limiter">
+   <div class="container-login100" style="background-image: url('/images/bg-01.jpg');">
+      <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+         <form class="login100-form validate-form">
+            <span class="login100-form-title p-b-49">
+               Login
+            </span>
 
-                  <div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
-                     <span class="label-input100">Password</span>
-                     <input class="input100" type="password" name="pass" placeholder="Type your password">
-                     <span class="focus-input100"></span>
-                  </div>
-
-                  <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
-                     <span class="label-input100">Username</span>
-                     <input class="input100" type="text" name="name" placeholder="Type your username">
-                     <span class="focus-input100"></span>
-                  </div>
-
-               
-               
-               
-                  <div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
-                     <span class="label-input100">Password</span>
-                     <input class="input100" type="password" name="pass" placeholder="Type your password">
-                     <span class="focus-input100"></span>
-                  </div>
-
-                  <div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
-                     <span class="label-input100">Password</span>
-                     <input class="input100" type="password" name="pass" placeholder="Type your password">
-                     <span class="focus-input100"></span>
-                  </div>
-
-                  <div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
-                     <span class="label-input100">Password</span>
-                     <input class="input100" type="password" name="pass" placeholder="Type your password">
-                     <span class="focus-input100"></span>
-                  </div>
-
-               
-               
-               <!-- <div class="text p-t-8 p-b-31">
-                  <a href="#">
-                     Forgot password?
-                  </a>
-               </div> -->
-
-               <div class="text p-t-8 p-b-31">
-                  
-               </div>
-               
-               <div class="container-login100-form-btn">
-                  <div class="wrap-login100-form-btn">
-                     <div class="login100-form-bgbtn"></div>
-                     <button class="login100-form-btn">
-                        Register
-                     </button>
-                  </div>
+            <div class=" validate-input m-b-23 row" data-validate = "Username is reauired">
+               <div class="wrap-input100 col-lg-3 col-md-6 col-sm-12 col-xs-12" >
+                  <span class="label-input100">Username</span>
+                  <input class="input100" type="text" name="username" placeholder="Type your username">
+                  <span class="focus-input100" data-symbol="&#xf206;"></span>
                </div>
 
-               <div class="txt1 text-center p-t-54 p-b-20">
+               <div class=" col-lg-1 col-md-2 col-sm-12 col-xs-12 " >
+
                </div>
 
-               <div class="flex-c-m">
-                  <a href="#" class="login100-social-item bg1">
-                     <i class="fa fa-facebook"></i>
-                  </a>
-
-                  <!-- <a href="#" class="login100-social-item bg2">
-                     <i class="fa fa-twitter"></i>
-                  </a> -->
-
-                  <a href="#" class="login100-social-item bg3">
-                     <i class="fa fa-google"></i>
-                  </a>
+               <div class="wrap-input100 col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                  <span class="label-input100">Username</span>
+                  <input class="input100" type="text" name="username" placeholder="Type your username">
+                  <span class="focus-input100" data-symbol="&#xf206;"></span>
                </div>
-            </form>
+               <div class=" col-lg-1 col-md-2 col-sm-12 col-xs-12 " >
+
+               </div>
+               <div class=" col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                   Select a file: <input type="file" name="myFile">
+             </div>
+
+          </div>
+
+          <div class=" validate-input m-b-23 row" data-validate = "Username is reauired">
+            <div class="wrap-input100 col-lg-3 col-md-6 col-sm-12 col-xs-12" >
+               <span class="label-input100">Username</span>
+               <input class="input100" type="text" name="username" placeholder="Type your username">
+               <span class="focus-input100" data-symbol="&#xf206;"></span>
+            </div>
+
+            <div class=" col-lg-1 col-md-2 col-sm-12 col-xs-12 " >
+
+            </div>
+
+            <div class="wrap-input100 col-lg-3 col-md-6 col-sm-12 col-xs-12">
+               <span class="label-input100">Password</span>
+               <input class="input100" type="text" name="username" placeholder="Type your username">
+               <span class="focus-input100" data-symbol="&#xf206;"></span>
+            </div>
+
          </div>
-      </div>
-   </div>
-   
 
-   <div id="dropDownSelect1"></div>
-   
-   <!--===============================================================================================-->
-   <script src="/vendor2/jquery/jquery-3.2.1.min.js"></script>
-   <!--===============================================================================================-->
-   <script src="/vendor2/animsition/js/animsition.min.js"></script>
-   <!--===============================================================================================-->
-   <script src="/vendor2/bootstrap/js/popper.js"></script>
-   <script src="/vendor2/bootstrap/js/bootstrap.min.js"></script>
-   <!--===============================================================================================-->
-   <script src="/vendor2/select2/select2.min.js"></script>
-   <!--===============================================================================================-->
-   <script src="/vendor2/daterangepicker/moment.min.js"></script>
-   <script src="/vendor2/daterangepicker/daterangepicker.js"></script>
-   <!--===============================================================================================-->
-   <script src="/vendor2/countdowntime/countdowntime.js"></script>
-   <!--===============================================================================================-->
-   <script src="/js/main2.js"></script>
+         <div class="validate-input m-b-23 row" data-validate = "Username is reauired">
+            <div class="wrap-input100 col-lg-3 col-md-6 col-sm-12 col-xs-12" >
+               <span class="label-input100">Password</span>
+               <input class="input100" type="text" name="username" placeholder="Type your username">
+               <span class="focus-input100" data-symbol="&#xf206;"></span>
+            </div>
+            <div class=" col-lg-1 col-md-2 col-sm-12 col-xs-12 " >
+
+            </div>
+            <div class="wrap-input100 col-lg-3 col-md-6 col-sm-12 col-xs-12" >
+               <span class="label-input100">Password</span>
+               <input class="input100" type="text" name="username" placeholder="Type your username">
+               <span class="focus-input100" data-symbol="&#xf206;"></span>
+            </div>
+         </div>
+
+         <div class="validate-input m-b-23 row" data-validate = "Username is reauired">
+            <div class="wrap-input100 col-lg-3 col-md-6 col-sm-12 col-xs-12" >
+               <span class="label-input100">Password</span>
+               <input class="input100" type="text" name="username" placeholder="Type your username">
+               <span class="focus-input100" data-symbol="&#xf206;"></span>
+            </div>
+            <div class=" col-lg-1 col-md-2 col-sm-12 col-xs-12 " >
+
+            </div>
+            <div class="wrap-input100 col-lg-3 col-md-6 col-sm-12 col-xs-12" >
+               <span class="label-input100">Password</span>
+               <input class="input100" type="text" name="username" placeholder="Type your username">
+               <span class="focus-input100" data-symbol="&#xf206;"></span>
+            </div>
+         </div>
+
+
+         <div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+               <div class="login100-form-bgbtn"></div>
+               <button class="login100-form-btn">
+                  Login
+               </button>
+            </div>
+         </div>
+
+         <div class="txt1 text-center p-t-54 p-b-20">
+         </div>
+
+         <div class="flex-c-m">
+            <a href="#" class="login100-social-item bg1">
+               <i class="fa fa-facebook"></i>
+            </a>
+
+            <a href="#" class="login100-social-item bg2">
+               <i class="fa fa-twitter"></i>
+            </a>
+
+            <a href="#" class="login100-social-item bg3">
+               <i class="fa fa-google"></i>
+            </a>
+         </div>
+      </form>
+   </div>
+</div>
+</div>
+
+
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+<script src="/vendor2/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="/vendor2/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="/vendor2/bootstrap/js/popper.js"></script>
+<script src="/vendor2/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="/vendor2/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="/vendor2/daterangepicker/moment.min.js"></script>
+<script src="/vendor2/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="/vendor2/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="/js/main2.js"></script>
 
 </body>
 </html>

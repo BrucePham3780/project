@@ -34,21 +34,21 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     
 
     <link href="/css/font-face.css" rel="stylesheet" media="all">
-    <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="/vendor3/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="/vendor3/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="/vendor3/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
-    <link href="<?php echo $this->request->webroot; ?>vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="<?php echo $this->request->webroot; ?>vendor3/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
-    <link href="/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="/vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="/vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link href="/vendor3/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="/vendor3/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="/vendor3/wow/animate.css" rel="stylesheet" media="all">
+    <link href="/vendor3/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="/vendor3/slick/slick.css" rel="stylesheet" media="all">
+    <link href="/vendor3/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/vendor3/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
     <link href="/css/theme.css" rel="stylesheet" media="all">
@@ -80,24 +80,24 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         
     </div>
 
-    <script src="/vendor/jquery-3.2.1.min.js"></script>
+    <script src="/vendor3/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
-    <script src="/vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="/vendor3/bootstrap-4.1/popper.min.js"></script>
+    <script src="/vendor3/bootstrap-4.1/bootstrap.min.js"></script>
     <!-- Vendor JS       -->
-    <script src="/vendor/slick/slick.min.js">
+    <script src="/vendor3/slick/slick.min.js">
     </script>
-    <script src="/vendor/wow/wow.min.js"></script>
-    <script src="/vendor/animsition/animsition.min.js"></script>
-    <script src="/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    <script src="/vendor3/wow/wow.min.js"></script>
+    <script src="/vendor3/animsition/animsition.min.js"></script>
+    <script src="/vendor3/bootstrap-progressbar/bootstrap-progressbar.min.js">
     </script>
-    <script src="/vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="/vendor/counter-up/jquery.counterup.min.js">
+    <script src="/vendor3/counter-up/jquery.waypoints.min.js"></script>
+    <script src="/vendor3/counter-up/jquery.counterup.min.js">
     </script>
-    <script src="/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="/vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="/vendor/select2/select2.min.js">
+    <script src="/vendor3/circle-progress/circle-progress.min.js"></script>
+    <script src="/vendor3/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/vendor3/chartjs/Chart.bundle.min.js"></script>
+    <script src="/vendor3/select2/select2.min.js">
     </script>
 
     <!-- Main JS-->

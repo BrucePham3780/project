@@ -32,7 +32,7 @@ class Cart extends Entity
     protected $_accessible = [
         'proc_id' => true,
         'user_id' => true,
-        'qty' => true,
+        'num-product' => true,
         'tt_price' => true,
         'created' => true,
         'modified' => true,

@@ -29,7 +29,7 @@ class Orderdetail extends Entity
      */
     protected $_accessible = [
         'proc_id' => true,
-        'qty' => true,
+        'num-product' => true,
         'tt_price' => true,
         'order_id' => true,
         'proc' => true,

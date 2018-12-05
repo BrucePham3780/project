@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 
+
 /**
  * Cart Controller
  *
@@ -51,19 +52,27 @@ class CartController extends AppController
      */
     public function add()
     {
+        $user1 = $this->Auth->user();
+        // $this->set('user1',$user1);
+        // $user_id = $user1['id']; 
+ 
         $cart = $this->Cart->newEntity();
+        $cart->user_id = $user1['id'];
+        pr($cart);die;
         if ($this->request->is('post')) {
             $cart = $this->Cart->patchEntity($cart, $this->request->getData());
+            
+
+
             if ($this->Cart->save($cart)) {
                 $this->Flash->success(__('The cart has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+                pr($cart);die;
+                return $this->redirect(['controller'=>'customers','action' => 'manyProduct']);
             }
             $this->Flash->error(__('The cart could not be saved. Please, try again.'));
         }
-        $products = $this->Cart->Products->find('list', ['limit' => 200]);
-        $users = $this->Cart->Users->find('list', ['limit' => 200]);
-        $this->set(compact('cart', 'products', 'users'));
+        //$products = $this->Cart->Products->find('list', ['limit' => 200]);
+        $this->set(compact('cart'));
     }
 
     /**

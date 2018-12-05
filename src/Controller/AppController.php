@@ -47,7 +47,7 @@ class AppController extends Controller
         $this->loadComponent('Flash');
         $this->loadComponent('Auth', [
             'loginAction'=> [
-                'controller' => '',
+                'controller' => 'Customers',
                 'action' => 'login', 
                 
             ],
@@ -84,16 +84,11 @@ class AppController extends Controller
         $user1 = $this->Auth->user();
         $this->set('user1',$user1);
 
-        // if($user1 && $user1['role_id'] != '1' ){
-        //    $cont = $this->request->controller;
-        //    $act = $this->request->action;
-        //    // Configure::read('Company.name');
-
-        //     pr($cont);
-        //     pr($act);
-        //      die();
-
-        //    // pr($cont,$act); pr(Configure::read('Company.name')); die();
+        //  if($user1 && $user1['role_id'] != '1' ){
+        //     $cont = $this->request->controller;
+        //     $act = $this->request->action;
+        //     $a = Configure::read('acl'.$cont.$act);
+        //     in_array($a,$user1['role_id']);
         // }    
         
         if (!array_key_exists('_serialize', $this->viewVars) &&

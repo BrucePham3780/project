@@ -63,8 +63,8 @@ class CartTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->integer('qty')
-            ->allowEmpty('qty');
+            ->integer('num-product')
+            ->allowEmpty('num-product');
 
         $validator
             ->numeric('tt_price')
