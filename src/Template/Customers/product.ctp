@@ -26,7 +26,7 @@
 	<?php echo $this->Form->create(null, [
     	'url' => ['controller' => 'Cart', 'action' => 'add']
 	]);	?>
-	<?= $this->Form->control('proc_id', ['value'=>'$product=>id'])?>
+	<?= $this->Form->control('proc_id', ['value'=> $product->id, 'type' => 'hidden'])?>
 
 	<div class="flex-w flex-sb">
 		<div class="w-size13 p-t-30 respon5">
