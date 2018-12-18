@@ -26,7 +26,7 @@
 	<?php echo $this->Form->create(null, [
     	'url' => ['controller' => 'Cart', 'action' => 'add']
 	]);	?>
-	<?= $this->Form->control('proc_id', ['value'=>'$product=>id'])?>
+	<?= $this->Form->control('proc_id', ['value'=> $product->id, 'type' => 'hidden'])?>
 
 	<div class="flex-w flex-sb">
 		<div class="w-size13 p-t-30 respon5">
@@ -62,6 +62,8 @@
 
 			<span class="m-text17">
 				$<?= $product->price?>
+				<?= $this->Form->control('tt_price', ['value'=> $product->price, 'type' => 'hidden'])?>
+
 			</span>
 
 			<!-- <p class="s-text8 p-t-10">
@@ -110,12 +112,11 @@
 							</button>
 
 							<!-- <input class="size8 m-text18 t-center num-product" type="number" name="num-product" value="1"> -->
-							<?=$this->Form->control('num-product',[
-								'label'=>false,
+							<?= $this->Form->control('num_product',[
+								'label' => false,
 								'class' => 'size8 m-text18 t-center num-product',
 								'type' => 'number',
-								'value' => '1',
-
+								'value' => '1'
 							])?>
 
 							<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
@@ -126,19 +127,16 @@
 						<div class="btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10">
 							<!-- Button -->
 
-							<?=
-										$this->Form->button('Add to Cart',[
-											'class'=>'flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4'
-										])
-									?>
+							<?=$this->Form->button('Add to Cart',[
+									'class'=>'flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4'])?>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="p-b-45">
-				<span class="s-text8 m-r-35">SKU: MUG-01</span>
-				<span class="s-text8">Categories:</span>
+				<span class="s-text8 m-r-35">ID: <?= $product->id?></span>
+				<span class="s-text8">Categories: <?= $product->has('category') ? $this->Html->link($product->category->name, ['controller' => 'Category', 'action' => 'view', $product->category->id]) : '' ?></span>
 			</div>
 
 			<!--  -->

@@ -1,70 +1,77 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\User $user
- */
-?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user2->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Role'), ['controller' => 'Role', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Role'), ['controller' => 'Role', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Cart'), ['controller' => 'Cart', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Cart'), ['controller' => 'Cart', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Order'), ['controller' => 'Order', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Order'), ['controller' => 'Order', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Shipping'), ['controller' => 'Shipping', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Shipping'), ['controller' => 'Shipping', 'action' => 'add']) ?> </li>
-    </ul>
-</nav>
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="title-1 m-b-25">User Details</h2>
+        <div class="table-responsive table--no-card m-b-40">
+            <table class="table table-borderless table-striped table-earning">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Images</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <?php if (!empty($user2->id)): ?>
+                            <td><?= $user2->id ?></td>
+                        <?php else: ?>
+                            <td></td>
+                        <?php endif; ?>
+
+                        <?php if (!empty($user2->images)): ?>
+                            <td><?=$this->Html->image($user2->images, array('width'=>'80px', 'height'=>'80px')) ?></td>
+                        <?php else: ?>
+                            <td></td>
+                        <?php endif; ?>
+
+                        <?php if (!empty($user2->name)): ?>
+                            <td><?= $user2->name ?></td>
+                        <?php else: ?>
+                            <td></td>
+                        <?php endif; ?>
+
+                        <?php if (!empty($user2->email)): ?>
+                            <td class="fullname-text1"><?= $user2->email?></td>
+                            <input type="hidden" class="fullname-raw1" value="<?=$user2->email?>">
+                        <?php else: ?>
+                            <td></td>
+                        <?php endif; ?>
+
+                        <?php if(!empty($user2->address)): ?>
+                            <td class="fullname-text"><?= $user2->address?></td>
+                            <input type="hidden" class="fullname-raw" value="<?=$user2->address?>">
+                        <?php else: ?>
+                            <td></td>
+                        <?php endif; ?>
+
+                        <?php if (!empty($user2->phoneNum)): ?>
+                            <td><?= $user2->phoneNum?></td>
+                        <?php else: ?>
+                            <td></td>
+                        <?php endif; ?>
+
+                        <?php if (!empty($user2->role->name)): ?>
+                            <td><?= $user2->role->name?></td>
+                        <?php else: ?>
+                            <td></td>
+                        <?php endif; ?>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>   
+
+
 <div class="users view large-9 medium-8 columns content">
-    <h3><?= h($user2->name) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Images') ?></th>
-            <td><?= h($user2->images) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Name') ?></th>
-            <td><?= h($user2->name) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Email') ?></th>
-            <td><?= h($user2->email) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Password') ?></th>
-            <td><?= h($user2->password) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Address') ?></th>
-            <td><?= h($user2->address) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('PhoneNum') ?></th>
-            <td><?= h($user2->phoneNum) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Role') ?></th>
-            <td><?= $user2->has('role') ? $this->Html->link($user2->role->name, ['controller' => 'Role', 'action' => 'view', $user2->role->id]) : '' ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($user2->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Created') ?></th>
-            <td><?= h($user2->created) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Modified') ?></th>
-            <td><?= h($user2->modified) ?></td>
-        </tr>
-    </table>
+ 
+
     <div class="related">
         <h4><?= __('Related Cart') ?></h4>
         <?php if (!empty($user2->cart)): ?>
@@ -165,3 +172,38 @@
         <?php endif; ?>
     </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" async defer>
+    $(document).ready(function() {
+        var text1 =$('.fullname-text1').html();
+        if(text1.length>10){
+            $('.fullname-text1').html(text1.substring(0,10) + '...');
+        }
+        $('.fullname-text1').mouseleave(function(){
+            var text1 = $('.fullname-text1').html();
+            if(text1.length>10){
+                $('.fullname-text1').html(text1.substring(0,10) + '...');
+            }
+        });
+        $('.fullname-text1').mouseenter(function(){
+            var raw_fullname1 = $('.fullname-raw1').val();
+            $(this).html(raw_fullname1);
+        });  
+
+        var text =$('.fullname-text').html();
+        if(text.length>10){
+            $('.fullname-text').html(text.substring(0,10) + '...');
+        }
+        $('.fullname-text').mouseleave(function(){
+            var text = $('.fullname-text').html();
+            if(text.length>10){
+                $('.fullname-text').html(text.substring(0,10) + '...');
+            }
+        });
+        $('.fullname-text').mouseenter(function(){
+            var raw_fullname = $('.fullname-raw').val();
+            $(this).html(raw_fullname);
+        });  
+    });
+</script>

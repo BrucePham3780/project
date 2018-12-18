@@ -90,34 +90,35 @@
 
 						<div class="header-wrapicon2">
 							<?= $this->Html->image('icon-header-02.png', array('class' => 'header-icon1 js-show-header-dropdown'),array('escape' => false))?>
-							<span class="header-icons-noti">0</span>
-
+							<?php if($loggedIn) : ?>    
+								<span class="header-icons-noti"><?=$count?></span>
+							<?php else: ?>
+								<span class="header-icons-noti">0</span>
+							<?php endif; ?>
+	
 							<!-- Header cart -->
 							<div class="header-cart header-dropdown">
-								<ul class="header-cart-wrapitem">
-									<li class="header-cart-item">
-										<div class="header-cart-item-img">
-											<img src="/images/item-cart-03.jpg" alt="IMG">
-										</div>
+								<?php if($loggedIn) : ?>  
+								<ul class="header-cart-wrapitem">  
+										<?php foreach ($cartList as $cartList1): ?>
+											<li class="header-cart-item">
+												<div class="header-cart-item-img">
+													<?=$this->Html->image($cartList1['product']['images'])?>
+												</div>
 
-										<div class="header-cart-item-txt">
-											<a href="#" class="header-cart-item-name">
-												Nixon Porter Leather Watch In Tan
-											</a>
+												<div class="header-cart-item-txt">
+													<a href="#" class="header-cart-item-name">
+														<?= $cartList1['product']['name']?>
+													</a>
 
-											<span class="header-cart-item-info">
-												1 x $17.00
-											</span>
-										</div>
-									</li>
-
-
+													<span class="header-cart-item-info">
+														<?=$cartList1->num_product?> x $<?= $cartList1['product']['price']?>
+													</span>
+												</div>
+											</li>
+										<?php endforeach ?>
 								</ul>
-
-								<div class="header-cart-total">
-									Total: $75.00
-								</div>
-
+								
 								<div class="header-cart-buttons">
 									<div class="header-cart-wrapbtn">
 
@@ -138,7 +139,12 @@
 
 									</div>
 								</div>
+								<?php else: ?>
+										<?php echo "Cart empty" ?>
+								<?php endif; ?>
 							</div>
+
+
 						</div>
 					</div>
 				</div>
@@ -212,8 +218,6 @@
 
 					</div>
 				</div>
-
-
 			</div>
 
 			<!-- Header Mobile -->
@@ -239,39 +243,43 @@
 
 								<div class="header-wrapicon2">
 									<?= $this->Html->image('icon-header-02.png', array('class' => 'header-icon1 js-show-header-dropdown'),array('escape' => false))?>
-									<span class="header-icons-noti">0</span>
+									<?php if($loggedIn) :?>
+										<span class="header-icons-noti"><?=$count?></span>
+									<?php else: ?>
+										<span class="header-icons-noti">0</span>
+									<?php endif;?>
 
 									<!-- Header cart noti -->
 									<div class="header-cart header-dropdown">
+										<?php if($loggedIn) : ?> 
 										<ul class="header-cart-wrapitem">
+											<?php foreach ($cartList as $cartList1): ?>
 											<li class="header-cart-item">
 												<div class="header-cart-item-img">
-													<img src="/images/item-cart-01.jpg" alt="IMG">
+													<?=$this->Html->image($cartList1['product']['images'])?>
 												</div>
 
 												<div class="header-cart-item-txt">
 													<a href="#" class="header-cart-item-name">
-														White Shirt With Pleat Detail Back
+														<?= $cartList1['product']['name']?>
 													</a>
 
 													<span class="header-cart-item-info">
-														1 x $19.00
+														<?= $cartList1->num_product?> x $<?= $cartList1['product']['price']?>
 													</span>
 												</div>
 											</li>
+										<?php endforeach ?>
 										</ul>
 
-										<div class="header-cart-total">
-											Total: $75.00
-										</div>
 
 										<div class="header-cart-buttons">
 											<div class="header-cart-wrapbtn">
 												<!-- Button -->
 												<?= $this->Html->link( $this->Html->tag('button','View Cart', array(
 													'class' => 'flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4')),
-												['controller' => 'customers','action' => 'cart'],
-												array('escape' => false)) ?>
+													['controller' => 'customers','action' => 'cart'],
+													array('escape' => false)) ?>
 											</div>
 
 											<div class="header-cart-wrapbtn">
@@ -283,6 +291,9 @@
 											</div>
 										</div>
 									</div>
+									<?php else: ?>
+										<?php echo "Cart empty" ?>
+									<?php endif; ?>
 								</div>
 							</div>
 

@@ -59,7 +59,6 @@
                         <th>price</th>
                         <th>dimension</th>
                         <th>color</th>
-                        <th>detail</th>
                         <th>status</th>
                         <th>vote</th>            
                         <th>action</th>
@@ -77,13 +76,12 @@
                                    <td></td>
                                 <?php endif; ?>
                                 
-                                <?php if (!empty($products1->images)): ?>
+                                <?php if (!empty($products1->name)): ?>
                                     <td><?= $products1->name ?></td>
                                 <?php else: ?>
-                                   <td><?= $products1->name ?></td>
+                                   <td></td>
                                 <?php endif; ?>
                                
-
 
                                <td><?= $products1->has('category') ? $this->Html->link($products1->category->name, ['controller' => 'Category', 'action' => 'view', $products1->category->id]) : '' ?></td>
                                <td><?= $products1->price ?></td>
@@ -100,11 +98,6 @@
                                    <td></td>
                                 <?php endif; ?>
                                
-                               <?php if (!empty($products1->descr)): ?>
-                                    <td><?= $products1->descr?></td>
-                                <?php else: ?>
-                                   <td></td>
-                                <?php endif; ?>
                                
                                 <?php if (!empty($products1->status)): ?>
                                    <td><?=$products1->status?></td>
@@ -154,7 +147,25 @@
 
             </div>
             <!-- END DATA TABLE -->
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" async defer>
+    $(document).ready(function() {
+        var text =$('.fullname-text').html();
+        if(text.length>10){
+            $('.fullname-text').html(text.substring(0,10) + '...');
+        }
+        $('.fullname-text').mouseleave(function(){
+            var text = $('.fullname-text').html();
+            if(text.length>10){
+                $('.fullname-text').html(text.substring(0,10) + '...');
+            }
+        });
+        $('.fullname-text').mouseenter(function(){
+            var raw_fullname = $('.fullname-raw').val();
+            $(this).html(raw_fullname);
+        });  
+    });
+</script>
             
 
       

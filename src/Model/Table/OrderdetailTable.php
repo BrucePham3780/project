@@ -38,10 +38,10 @@ class OrderdetailTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Procs', [
+        $this->belongsTo('Products', [
             'foreignKey' => 'proc_id'
         ]);
-        $this->belongsTo('Order', [
+        $this->belongsTo('Orders', [
             'foreignKey' => 'order_id'
         ]);
     }
@@ -59,11 +59,11 @@ class OrderdetailTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->integer('num-product')
-            ->allowEmpty('num-product');
+            ->integer('num_product')
+            ->allowEmpty('num_product');
 
         $validator
-            ->numeric('tt_price')
+            ->numeric('t_price')
             ->allowEmpty('tt_price');
 
         return $validator;
@@ -78,8 +78,8 @@ class OrderdetailTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['proc_id'], 'Procs'));
-        $rules->add($rules->existsIn(['order_id'], 'Order'));
+        $rules->add($rules->existsIn(['proc_id'], 'Products'));
+        $rules->add($rules->existsIn(['order_id'], 'Orders'));
 
         return $rules;
     }

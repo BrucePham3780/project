@@ -71,7 +71,8 @@
                                 <?php endif; ?>
                                 <td><?= $users2->has('role') ? $this->Html->link($users2->role->name, ['controller' => 'Role', 'action' => 'view', $users2->role->id]) : '' ?></td>
                                 <td><?= $users2->email ?></td>
-                                <td><?= $users2->address ?></td>
+                                <td class="fullname-text"><?= $users2->address?></td>
+                                <input type="hidden" class="fullname-raw" value="<?=$users2->address?>">
                                 <td><?= $users2->phoneNum ?></td>
                                 <td>
                                     <div class="table-data-feature">
@@ -110,4 +111,23 @@
 </div>
 <!-- END DATA TABLE -->
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" async defer>
+    $(document).ready(function() {
 
+        var text =$('.fullname-text').html();
+        if(text.length>10){
+            $('.fullname-text').html(text.substring(0,10) + '...');
+        }
+        $('.fullname-text').mouseleave(function(){
+            var text = $('.fullname-text').html();
+            if(text.length>10){
+                $('.fullname-text').html(text.substring(0,10) + '...');
+            }
+        });
+        $('.fullname-text').mouseenter(function(){
+            var raw_fullname = $('.fullname-raw').val();
+            $(this).html(raw_fullname);
+        });  
+    });
+</script>

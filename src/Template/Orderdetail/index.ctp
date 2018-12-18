@@ -19,8 +19,8 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('proc_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('qty') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('tt_price') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('num_product') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('t_price') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('order_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>

@@ -16,6 +16,8 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\ORM\Table;
+use Cake\ORM\TableRegistry;
 
 /**
  * Application Controller
@@ -68,9 +70,6 @@ class AppController extends Controller
         ]);
         // $this->Auth->allow();
 
-
-
-
         /*
          * Enable the following component for recommended CakePHP security settings.
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
@@ -78,11 +77,31 @@ class AppController extends Controller
         //$this->loadComponent('Security');
     }
 
-    public function beforeRender(Event $event)
+    public function beforeFilter(Event $event)
     {
-       
+        parent::beforeFilter($event);
         $user1 = $this->Auth->user();
         $this->set('user1',$user1);
+
+        $cartTbl = TableRegistry::get("Cart");
+        $cartList = $cartTbl->find('all', [
+            'condition' => ['Cart.user_id' => $user1['id']],
+            'contain' => ['Products','Users']
+            
+        ]);
+        
+        $cartTbl = TableRegistry::get("Cart");
+        $cartList = $cartTbl->find('all', [
+            'condition' => ['Cart.user_id' => $user1['id']],
+            'contain' => ['Products','Users']
+            
+        ]);
+
+        $count = $cartList->count();
+
+        // $count = sizeof($cartList);
+        $this->set('cartList',$cartList);
+        $this->set('count',$count);
 
         //  if($user1 && $user1['role_id'] != '1' ){
         //     $cont = $this->request->controller;
@@ -103,5 +122,7 @@ class AppController extends Controller
             } else {
                 $this->set('loggedIn', false); 
             }
-        }
     }
+
+
+}

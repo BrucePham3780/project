@@ -48,7 +48,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo $this->URL->build(['controller'=>'Order','action'=>'index']); ?>">
+                            <a href="<?php echo $this->URL->build(['controller'=>'Orders','action'=>'index']); ?>">
                                 <i class="fas fa-clipboard-list"></i>Orders</a>
                         </li>
 

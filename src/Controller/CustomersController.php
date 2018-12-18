@@ -3,7 +3,9 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
-// use App\Controller\CartController;
+use Cake\ORM\Table;
+use Cake\ORM\TableRegistry;
+use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * Products Controller
@@ -22,8 +24,8 @@ class CustomersController extends AppController
     {
         parent::initialize();
 
-        //$this->Auth->allow();
-        $this->Auth->allow(['index','manyProduct','cart','product','register']);
+        $this->Auth->allow();
+        //$this->Auth->allow(['index','manyProduct','cart','product','register']);
 
     }
 
@@ -48,6 +50,39 @@ class CustomersController extends AppController
 
     public function register(){
         $this->viewBuilder()->setLayout('customers');
+        $userTbl = TableRegistry::get("Users");
+        $user2 = $userTbl->newEntity();   
+        $rs = $this->request->getData('Register');
+        if ($this->request->is('post')) {
+            // pr($rs);die;
+            if(!empty($this->request->data['images']['name']))
+                {
+
+                    $filename = $this->request->data['images']['name'];
+                    $uploadpath = 'img/';
+                    $uploadfile =  $uploadpath.$filename;
+                    if(move_uploaded_file($this->request->data['images']['tmp_name'], $uploadfile)){
+                        
+                        $this->request->data['images']= $filename;
+                    }
+                    
+                }else{
+                        $this->Flash->error(__('No file choosen'));
+                    }
+            $user2->role_id = 3;
+            $user2->$password = $hasher; 
+            $user2 = $userTbl->patchEntity($user2,$rs);
+            pr($user2);die;
+            if ($userTbl->save($user2)) {
+                $this->Flash->success(__('The product has been saved.'));
+
+                return $this->redirect(['controller'=>'customers','action' => 'index']);
+            }
+            $this->Flash->error(__('The product could not be saved. Please, try again.'));
+        }
+        $this->set(compact('user2'));
+        $this->set('_serialize',['user2']);
+
         
     }
 
@@ -72,7 +107,6 @@ class CustomersController extends AppController
             }
 
             // Bad Login
-
             $this->Flash->error('Incorrect Login');
             return $this->redirect(['controller'=> 'customers','action'=>'index']);
 
@@ -83,7 +117,7 @@ class CustomersController extends AppController
     //Logout
       public function logout() {
 
-        $this->loadComponent('Auth');
+        
         $this->Auth->logout();
         $this->redirect(array('controller' => 'customers', 'action' => 'index'));
     }
@@ -114,42 +148,34 @@ class CustomersController extends AppController
         $result1 =$this->loadModel('category');
         $data1 = $result1->find();
         $this->set('category',$data1);
-
-
-    }
-
-
-    public function Order()
-    {
-
     }
 
     public function Cart(){
         $this->viewBuilder()->setLayout('customers');
+
+        $user1 = $this->Auth->user();
+        $cartTbl = TableRegistry::get("Cart");
+        $cartList = $cartTbl->find('all', [
+            'condition' => ['Cart.user_id' => $user1['id']],
+            'contain' => ['Products','Users']
+            
+        ]);
+        $this->set('cartList',$cartList);
+        
     }
 
-    public function addCart(){
+    public function Order()
+    {
+        $this->viewBuilder()->setLayout('customers');
 
-         $user1 = $this->Auth->user();
-        // $this->set('user1',$user1);
-        // $user_id = $user1['id']; 
- 
-        $cart = $this->Cart->newEntity();
-        if ($this->request->is('post')) {
-            $cart = $this->Cart->patchEntity($cart, $this->request->getData());
-            $cart->user_id = $user1['id'];
-
-
-            if ($this->Cart->save($cart)) {
-                $this->Flash->success(__('The cart has been saved.'));
-                pr($cart);die;
-                return $this->redirect(['controller'=>'customers','action' => 'manyProduct']);
-            }
-            $this->Flash->error(__('The cart could not be saved. Please, try again.'));
-        }
-        //$products = $this->Cart->Products->find('list', ['limit' => 200]);
-        $this->set(compact('cart'));
-    }
+        $user1 = $this->Auth->user();
+        $orderTbl = TableRegistry::get("Order");
+        $orderList = $orderTble->find('all', 
+            ['condition' => ['Order.user_id' => $user1['id']],
+             'contain' => ['Users']
+            ]);        
+        $this->set('orderList',$orderList);
+    }  
     
     
 }

@@ -74,7 +74,7 @@ use Cake\I18n\Time;
 try {
     Configure::config('default', new PhpConfig());
     Configure::load('app', 'default', false);
-    // Configure::load('permission','default');
+    Configure::load('permission','default');
 } catch (\Exception $e) {
     exit($e->getMessage() . "\n");
 }
@@ -103,7 +103,7 @@ if (Configure::read('debug')) {
  */
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 // date_default_timezone_set('UTC');
-/*
+/*  
  * Configure the mbstring extension to use the correct encoding.
  */
 

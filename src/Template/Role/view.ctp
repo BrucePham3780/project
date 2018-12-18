@@ -1,81 +1,117 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Role $role
- */
-?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Role'), ['action' => 'edit', $role->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Role'), ['action' => 'delete', $role->id], ['confirm' => __('Are you sure you want to delete # {0}?', $role->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Role'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Role'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="role view large-9 medium-8 columns content">
-    <h3><?= h($role->name) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Name') ?></th>
-            <td><?= h($role->name) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Descr') ?></th>
-            <td><?= h($role->descr) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($role->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Created') ?></th>
-            <td><?= h($role->created) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Modified') ?></th>
-            <td><?= h($role->modified) ?></td>
-        </tr>
-    </table>
-    <div class="related">
-        <h4><?= __('Related Users') ?></h4>
-        <?php if (!empty($role->users)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Images') ?></th>
-                <th scope="col"><?= __('Name') ?></th>
-                <th scope="col"><?= __('Email') ?></th>
-                <th scope="col"><?= __('Password') ?></th>
-                <th scope="col"><?= __('Address') ?></th>
-                <th scope="col"><?= __('PhoneNum') ?></th>
-                <th scope="col"><?= __('Created') ?></th>
-                <th scope="col"><?= __('Modified') ?></th>
-                <th scope="col"><?= __('Role Id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($role->users as $users): ?>
-            <tr>
-                <td><?= h($users->id) ?></td>
-                <td><?= h($users->images) ?></td>
-                <td><?= h($users->name) ?></td>
-                <td><?= h($users->email) ?></td>
-                <td><?= h($users->password) ?></td>
-                <td><?= h($users->address) ?></td>
-                <td><?= h($users->phoneNum) ?></td>
-                <td><?= h($users->created) ?></td>
-                <td><?= h($users->modified) ?></td>
-                <td><?= h($users->role_id) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Users', 'action' => 'view', $users->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Users', 'action' => 'edit', $users->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Users', 'action' => 'delete', $users->id], ['confirm' => __('Are you sure you want to delete # {0}?', $users->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="title-1 m-b-25">Role Details</h2>
+        <div class="table-responsive table--no-card m-b-40">
+            <table class="table table-borderless table-striped table-earning">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th class="text-right">created</th>
+                        <th class="text-right">modified</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <?php if (!empty($role->id)): ?>
+                            <td><?= $role->id ?></td>
+                        <?php else: ?>
+                            <td></td>
+                        <?php endif; ?>
+
+                        <?php if (!empty($role->name)): ?>
+                            <td><?= $role->name ?></td>
+                        <?php else: ?>
+                            <td></td>
+                        <?php endif; ?>
+
+                        <?php if (!empty($role->descr)): ?>
+                            <td><?= $role->descr ?></td>
+                        <?php else: ?>
+                            <td></td>
+                        <?php endif; ?>
+
+                        <?php if (!empty($role->created)): ?>
+                            <td><?= $role->created ?></td>
+                        <?php else: ?>
+                            <td></td>
+                        <?php endif; ?>
+
+                        <?php if (!empty($role->modified)): ?>
+                            <td><?= $role->modified ?></td>
+                        <?php else: ?>
+                            <td></td>
+                        <?php endif; ?>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
     </div>
+</div>    
+
+
+<?php if (!empty($role->users)): ?>
+<div class=" role index table-responsive table-responsive-data2 ">
+    <h2 class="title-1 m-b-25">Relate Users</h2>
+    <table class="table table-data2">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>avatar</th>
+                <th>email</th>
+                <th>address</th>
+                <th>contact</th>            
+                <th></th>                                
+            </tr>
+        </thead>            
+
+        <tbody>
+            <?php foreach ($role->users as $users2): ?>
+                <tr class="tr-shadow">
+                    <td><?= $users2->name ?></td>
+
+                    <?php if (!empty($users2->images)): ?>
+                        <td><?=$this->Html->image($users2->images, array('width'=>'80px', 'height'=>'80px')) ?></td>
+                    <?php else: ?>
+                        <td></td>
+                    <?php endif; ?>
+                    <td><?= $users2->email ?></td>
+                    <td><?= $users2->address ?></td>
+                    <td><?= $users2->phoneNum ?></td>
+                    <td>
+                        <div class="table-data-feature">
+                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                            <?= $this->Html->link($this->Html->tag('i', '', array('class' => 'zmdi zmdi-info-outline')),
+                                                        ['controller' => 'users','action' => 'view', $users2->id],
+                                                        array('escape' => false)) ?>
+                            </button>
+                            
+                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">>
+                            <?= $this->Html->link($this->Html->tag('i', '', array('class' => 'zmdi zmdi-edit')),
+                                ['controller' => 'users','action' => 'edit', $users2->id], 
+                                array('escape' => false)) ?>
+                            </button>
+                            
+                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">>
+                                <?= $this->Form->postLink('<i class="fa fa-trash"></i> ',
+                                    ['action' => 'delete', $users2->id], 
+                                    [
+                                        'escape' => false,
+                                        'confirm' => __('Are you sure, you want to delete {0}?', $users2->name)
+                                    ]
+                                )?>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="spacer"></tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 </div>
+<?php endif; ?>
+             

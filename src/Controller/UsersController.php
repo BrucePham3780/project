@@ -37,11 +37,11 @@ class UsersController extends AppController
      */
     public function view($id = null)
     {
-        $user = $this->Users->get($id, [
-            'contain' => ['Role', 'Cart', 'Order', 'Shipping']
+        $user2 = $this->Users->get($id, [
+            'contain' => ['Role', 'Cart', 'Shipping']
         ]);
 
-        $this->set('user', $user);
+        $this->set('user2', $user2);
     }
 
     /**

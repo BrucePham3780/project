@@ -21,7 +21,7 @@ class OrderdetailController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Procs', 'Order']
+            'contain' => ['Products', 'Orders']
         ];
         $orderdetail = $this->paginate($this->Orderdetail);
 
@@ -38,7 +38,7 @@ class OrderdetailController extends AppController
     public function view($id = null)
     {
         $orderdetail = $this->Orderdetail->get($id, [
-            'contain' => ['Procs', 'Order']
+            'contain' => ['Products', 'Orders']
         ]);
 
         $this->set('orderdetail', $orderdetail);
@@ -61,9 +61,9 @@ class OrderdetailController extends AppController
             }
             $this->Flash->error(__('The orderdetail could not be saved. Please, try again.'));
         }
-        $procs = $this->Orderdetail->Procs->find('list', ['limit' => 200]);
-        $order = $this->Orderdetail->Order->find('list', ['limit' => 200]);
-        $this->set(compact('orderdetail', 'procs', 'order'));
+        $procs = $this->Orderdetail->Products->find('list', ['limit' => 200]);
+        $order = $this->Orderdetail->Orders->find('list', ['limit' => 200]);
+        $this->set(compact('orderdetail', 'product', 'order'));
     }
 
     /**

@@ -34,9 +34,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     
 
     <link href="/css/font-face.css" rel="stylesheet" media="all">
-    <link href="/vendor3/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="/vendor3/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="/vendor3/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="/webroot/vendor3/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="/webroot/vendor3/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="/webroot/vendor3/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
     <link href="<?php echo $this->request->webroot; ?>vendor3/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">

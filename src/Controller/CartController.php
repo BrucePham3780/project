@@ -1,7 +1,10 @@
 <?php
 namespace App\Controller;
 
+
 use App\Controller\AppController;
+use Cake\ORM\Table;
+use Cake\ORM\TableRegistry;
 
 
 /**
@@ -30,7 +33,7 @@ class CartController extends AppController
     }
 
     /**
-     * View method
+     * View metho
      *
      * @param string|null $id Cart id.
      * @return \Cake\Http\Response|void
@@ -52,27 +55,45 @@ class CartController extends AppController
      */
     public function add()
     {
+        $this->autoRender = false;
         $user1 = $this->Auth->user();
-        // $this->set('user1',$user1);
-        // $user_id = $user1['id']; 
- 
-        $cart = $this->Cart->newEntity();
-        $cart->user_id = $user1['id'];
-        pr($cart);die;
+        $cartTbl = TableRegistry::get("Cart");
+        $cart = $cartTbl->newEntity();// load cart model in cake 3
+        $cartDt = $this->request->getData();
         if ($this->request->is('post')) {
-            $cart = $this->Cart->patchEntity($cart, $this->request->getData());
-            
+            $cartList = $cartTbl->find('all', [
+                'conditions' => ['Cart.user_id' => $user1['id'],
+                                'Cart.proc_id' => $cartDt['proc_id']
+                               ]
+            ])->first();
+            // pr($cartList);die;
+            // pr($cartList); pr($cartDt); die;
+            // pr(!empty($cartList=='1'));die;
+            if(!empty($cartList)){
+                $cart = $cartTbl->patchEntity($cartList, $cartDt); 
+                $cart->num_product =  $cartList->num_product + $cartDt['num_product'];
+                $cart->tt_price =  $cartList->tt_price + $cartDt['tt_price'] * $cartDt['num_product'];
+                $cart->user_id = $user1['id'];
+                $cart->id = $cartList->id;
 
-
-            if ($this->Cart->save($cart)) {
-                $this->Flash->success(__('The cart has been saved.'));
-                pr($cart);die;
-                return $this->redirect(['controller'=>'customers','action' => 'manyProduct']);
+                if ($cartTbl->save($cart)) {
+                    $this->Flash->success(__('The cart has been saved.'));
+                    return $this->redirect(['controller'=>'customers','action' => 'manyProduct']);
+                }
+                $this->Flash->error(__('The cart could not be saved. Please, try again.'));
+            }else{  
+                $cart = $cartTbl->patchEntity($cart, $cartDt); 
+                $cart->user_id = $user1['id'];
+                if ($this->Cart->save($cart)) {
+                    $this->Flash->success(__('The cart has been saved.'));
+                    return $this->redirect(['controller'=>'customers','action' => 'manyProduct']);
+                }
+                $this->Flash->error(__('The cart could not be saved. Please, try again.'));
             }
-            $this->Flash->error(__('The cart could not be saved. Please, try again.'));
-        }
-        //$products = $this->Cart->Products->find('list', ['limit' => 200]);
+        
         $this->set(compact('cart'));
+        } 
+        
     }
 
     /**
@@ -80,25 +101,30 @@ class CartController extends AppController
      *
      * @param string|null $id Cart id.
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
+     * @throws \Cake\Network\Exception\NotFoundException When record not found. 
      */
-    public function edit($id = null)
-    {
-        $cart = $this->Cart->get($id, [
-            'contain' => []
+    public function update($id = null)
+    {   
+        $this->autoRender = false;
+        $user1 = $this->Auth->user();
+        $cartTbl = TableRegistry::get("Cart");
+        $cartList = $cartTbl->find('all', [
+            'condition' => ['Cart.user_id' => $user1['id'] ]
+            
         ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $cart = $this->Cart->patchEntity($cart, $this->request->getData());
-            if ($this->Cart->save($cart)) {
-                $this->Flash->success(__('The cart has been saved.'));
+        $cd = $this->request->getData('OrderDetail');
+        if ($this->request->is('post')) {
+            // pr($this->request->getData());die;
+            $carts = $cartTbl->patchEntities($cartList,$cd);
+                if ($cartTbl->saveMany($carts)) {
+                    $this->Flash->success(__('The cart has been deleted.'));
+                    return $this->redirect(['controller'=>'customers','action' => 'cart']);
 
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The cart could not be saved. Please, try again.'));
+                } else {
+                    $this->Flash->error(__('The cart could not be deleted. Please, try again.'));
+                }
         }
-        $products = $this->Cart->Products->find('list', ['limit' => 200]);
-        $users = $this->Cart->Users->find('list', ['limit' => 200]);
-        $this->set(compact('cart', 'products', 'users'));
+        $this->set(compact('cart'));
     }
 
     /**
@@ -110,6 +136,7 @@ class CartController extends AppController
      */
     public function delete($id = null)
     {
+        $this->autoRender = false;
         $this->request->allowMethod(['post', 'delete']);
         $cart = $this->Cart->get($id);
         if ($this->Cart->delete($cart)) {
@@ -118,6 +145,6 @@ class CartController extends AppController
             $this->Flash->error(__('The cart could not be deleted. Please, try again.'));
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect(['controller'=>'customers','action' => 'cart']);
     }
 }

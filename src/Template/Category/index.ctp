@@ -55,7 +55,7 @@
                             <th>name</th>            
                             <th>create</th>
                             <th>update</th>
-                            <th></th>            
+                            <th>action</th>            
                         </tr>
                     </thead>            
 
@@ -68,11 +68,6 @@
                                 <td><?= $category1->modified ?></td>
                                 <td>
                                     <div class="table-data-feature">
-                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                            <?= $this->Html->link($this->Html->tag('i', '', array('class' => 'zmdi zmdi-info-outline')),
-                                            ['controller' => 'category','action' => 'view', $category1->id],
-                                             array('escape' => false)) ?>
-                                        </button>
                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">>
                                             <?= $this->Html->link($this->Html->tag('i', '', array('class' => 'zmdi zmdi-edit')),
                                             ['controller' => 'category','action' => 'edit', $category1->id], 
