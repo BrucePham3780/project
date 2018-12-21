@@ -53,8 +53,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo $this->URL->build(['controller'=>'Shipping','action'=>'index']); ?>">
-                                <i class="fas fa-shipping-fast"></i>Shipping</a>
+                                <!-- <i class="fas fa-shipping-fast"></i>Shipping</a> -->
                         </li>
 
                         

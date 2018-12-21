@@ -3,8 +3,15 @@
 	<!-- Header desktop -->
 	<div class="container-menu-header">
 		<div class="topbar">
-			<div class="topbar-social">
-				<a href="#" class="topbar-social-item fa fa-facebook"></a>
+			<div class="topbar-social">				
+				<?= $this->Html->link(
+					$this->Html->tag(''),
+					array(
+						'controller' => 'customers', 
+						'action' => 'loginFb'
+					), array('class'=>'topbar-social-item fa fa-facebook','escape' => false)
+				)	
+				?>
 				<a href="#" class="topbar-social-item fa fa-instagram"></a>
 				<a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
 				<a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
@@ -38,7 +45,7 @@
 					), array('class'=>'logo','escape' => false)
 				)	
 				?>
-
+				
 
 				<!-- Menu -->
 				<div class="wrap_menu">

@@ -21,10 +21,9 @@ class ShippingController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users', 'Order']
+            'contain' => ['Users', 'Orders']
         ];
         $shipping = $this->paginate($this->Shipping);
-
         $this->set(compact('shipping'));
     }
 
@@ -38,7 +37,7 @@ class ShippingController extends AppController
     public function view($id = null)
     {
         $shipping = $this->Shipping->get($id, [
-            'contain' => ['Users', 'Order']
+            'contain' => ['Users', 'Orders']
         ]);
 
         $this->set('shipping', $shipping);
@@ -62,7 +61,7 @@ class ShippingController extends AppController
             $this->Flash->error(__('The shipping could not be saved. Please, try again.'));
         }
         $users = $this->Shipping->Users->find('list', ['limit' => 200]);
-        $order = $this->Shipping->Order->find('list', ['limit' => 200]);
+        $order = $this->Shipping->Orders->find('list', ['limit' => 200]);
         $this->set(compact('shipping', 'users', 'order'));
     }
 
@@ -88,7 +87,7 @@ class ShippingController extends AppController
             $this->Flash->error(__('The shipping could not be saved. Please, try again.'));
         }
         $users = $this->Shipping->Users->find('list', ['limit' => 200]);
-        $order = $this->Shipping->Order->find('list', ['limit' => 200]);
+        $order = $this->Shipping->Orders->find('list', ['limit' => 200]);
         $this->set(compact('shipping', 'users', 'order'));
     }
 

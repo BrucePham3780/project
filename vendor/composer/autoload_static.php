@@ -24,6 +24,7 @@ class ComposerStaticInitea109285a2aa8de7ae7fcac4d047e924
         'b1fc73705e1bec51cd2b20a32cf1c60a' => __DIR__ . '/..' . '/cakephp/cakephp/src/Utility/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        'c65d09b6820da036953a371c8c73a9b1' => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook/polyfills.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
     );
 
@@ -79,6 +80,10 @@ class ComposerStaticInitea109285a2aa8de7ae7fcac4d047e924
             'Jasny\\Twig\\' => 11,
             'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
             'JakubOnderka\\PhpConsoleColor\\' => 29,
+        ),
+        'F' => 
+        array (
+            'Facebook\\' => 9,
         ),
         'D' => 
         array (
@@ -225,6 +230,10 @@ class ComposerStaticInitea109285a2aa8de7ae7fcac4d047e924
         'JakubOnderka\\PhpConsoleColor\\' => 
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
+        ),
+        'Facebook\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook',
         ),
         'DebugKit\\Test\\Fixture\\' => 
         array (

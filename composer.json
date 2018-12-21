@@ -9,6 +9,7 @@
         "cakephp/cakephp": "3.next-dev as 3.7.0",
         "cakephp/migrations": "^2.0.0",
         "cakephp/plugin-installer": "^1.0",
+        "facebook/graph-sdk": "^5.7",
         "mobiledetect/mobiledetectlib": "2.*"
     },
     "require-dev": {

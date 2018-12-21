@@ -1,4 +1,4 @@
-<!-- HEADER DESKTOP-->
+ HEADER DESKTOP-->
 <header class="header-desktop">
     <div class="section__content section__content--p30">
         <div class="container-fluid">
@@ -11,7 +11,7 @@
                 </form>
                 <div class="header-button">
                     <div class="noti-wrap">
-                        <div class="noti__item js-item-menu">
+                        <!-- <div class="noti__item js-item-menu">
                             <i class="zmdi zmdi-comment-more"></i>
                             <span class="quantity">1</span>
                             <div class="mess-dropdown js-dropdown">
@@ -42,13 +42,14 @@
                                     <a href="#">View all messages</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+                        <?php if(!empty($orderList)) : ?>  
                         <div class="noti__item js-item-menu">
                             <i class="zmdi zmdi-email"></i>
-                            <span class="quantity">1</span>
+                            <span class="quantity"><?=$countOrders?></span>
                             <div class="email-dropdown js-dropdown">
                                 <div class="email__title">
-                                    <p>You have 3 New Emails</p>
+                                    <p>You have <?=$countOrders?> New Orders</p>
                                 </div>
                                 <div class="email__item">
                                     <div class="image img-cir img-40">
@@ -82,12 +83,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="noti__item js-item-menu">
+                        <?php else: ?>
+                        
+                        <?php endif; ?>
+
+                        <!-- <div class="noti__item js-item-menu">
                             <i class="zmdi zmdi-notifications"></i>
                             <span class="quantity">3</span>
                             <div class="notifi-dropdown js-dropdown">
                                 <div class="notifi__title">
-                                    <p>You have 3 Notifications</p>
+                                    <p>You have Notifications</p>
                                 </div>
                                 <div class="notifi__item">
                                     <div class="bg-c1 img-cir img-40">
@@ -120,7 +125,10 @@
                                     <a href="#">All notifications</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+                                
+ 
+
                     </div>
                     <div class="account-wrap">
                         <div class="account-item clearfix js-item-menu">
@@ -203,4 +211,4 @@
                             </div>
                         </div>
                     </header>
-            <!-- END HEADER DESKTOP-->
+            <!-- END HEADER DESKTOP

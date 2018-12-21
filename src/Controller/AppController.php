@@ -96,14 +96,22 @@ class AppController extends Controller
             'contain' => ['Products','Users']
             
         ]);
-
         $count = $cartList->count();
-
-        // $count = sizeof($cartList);
         $this->set('cartList',$cartList);
         $this->set('count',$count);
 
-        //  if($user1 && $user1['role_id'] != '1' ){
+
+        $ordersTbl = TableRegistry::get("Orders");
+        // pr($ordersTbl);die;
+        $ordersList = $ordersTbl->find('all', [
+            'contain' => ['Users']
+        ]);
+        $countOrders = $ordersList->count();
+        $this->set('ordersList',$ordersList);
+        $this->set('countOrders',$countOrders);
+        
+
+        // if($user1 && $user1['role_id'] != '1' ){
         //     $cont = $this->request->controller;
         //     $act = $this->request->action;
         //     $a = Configure::read('acl'.$cont.$act);
